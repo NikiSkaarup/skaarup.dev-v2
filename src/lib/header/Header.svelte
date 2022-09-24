@@ -1,33 +1,18 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a>
+		<!-- TODO put something else here? github link? -->
 	</div>
 
 	<nav data-sveltekit-prefetch>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
 		<ul>
 			<li class:active={$page.url.pathname === '/'}>
 				<a href="/">Home</a>
 			</li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a href="/about">About</a>
-			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
-				<a href="/todos">Todos</a>
-			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
 	</nav>
 
 	<div class="corner">
@@ -42,8 +27,8 @@
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		width: 3rem;
+		height: 3rem;
 	}
 
 	.corner a {
@@ -55,8 +40,8 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 2rem;
+		height: 2rem;
 		object-fit: contain;
 	}
 
@@ -66,21 +51,11 @@
 		--background: rgba(255, 255, 255, 0.7);
 	}
 
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
-	}
-
 	ul {
 		position: relative;
 		padding: 0;
 		margin: 0;
-		height: 3em;
+		height: 3rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -110,12 +85,12 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 1em;
+		padding: 0 1rem;
 		color: var(--heading-color);
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
+		letter-spacing: 0.1rem;
 		text-decoration: none;
 		transition: color 0.2s linear;
 	}
