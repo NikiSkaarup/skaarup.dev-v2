@@ -4,7 +4,9 @@
 
 <header>
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<a href="/#">
+			<img src="" alt="?" />
+		</a>
 	</div>
 
 	<nav data-sveltekit-prefetch>
@@ -16,7 +18,9 @@
 	</nav>
 
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<a href="/#">
+			<img src="" alt="?" />
+		</a>
 	</div>
 </header>
 
@@ -31,7 +35,7 @@
 		height: 3rem;
 	}
 
-	.corner a {
+	.corner > a {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -39,7 +43,7 @@
 		height: 100%;
 	}
 
-	.corner img {
+	.corner > a > img {
 		width: 2rem;
 		height: 2rem;
 		object-fit: contain;
