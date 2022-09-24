@@ -1,4 +1,8 @@
-import adapter from '@sveltejs/adapter-netlify';
+import netlify_adapter from '@sveltejs/adapter-netlify';
+import node_adapter from '@sveltejs/adapter-node';
+
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -8,7 +12,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({
+		adapter: isDevelopment ? node_adapter() : netlify_adapter({
 			// if true, will create a Netlify Edge Function rather
 			// than using standard Node-based functions
 			edge: false,
