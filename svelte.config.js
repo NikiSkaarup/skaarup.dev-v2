@@ -2,8 +2,7 @@ import netlify_adapter from '@sveltejs/adapter-netlify';
 import node_adapter from '@sveltejs/adapter-node';
 
 const isDevelopment = process.env.hosting === 'coolify';
-console.log(`process.env.hosting=${process.env.hosting}`);
-console.log(`isDevelopment=${isDevelopment}`);
+
 import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
