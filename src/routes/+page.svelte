@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
 </script>
 
 <svelte:head>
@@ -8,15 +7,7 @@
 </svelte:head>
 
 <section>
-	<h1>
-		Welcome<br />to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<h1>Welcome to your new SvelteKit app</h1>
 </section>
 
 <style>
@@ -26,5 +17,12 @@
 		justify-content: center;
 		align-items: center;
 		flex: 1;
+	}
+
+	h1 {
+		text-shadow: 2px 3px var(--color-cyan-1);
+		color: var(--color-yellow-1);
+		font-family: monospace;
+		text-transform: uppercase;
 	}
 </style>

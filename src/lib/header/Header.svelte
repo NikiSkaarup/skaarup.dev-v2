@@ -52,7 +52,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: var(--color-pink-1);
 	}
 
 	ul {
@@ -63,7 +63,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		list-style: none;
 		background: var(--background);
 		background-size: contain;
 	}
@@ -90,7 +89,7 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 1rem;
-		color: var(--heading-color);
+		color: var(--color-cyan-1);
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;

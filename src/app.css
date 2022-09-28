@@ -2,17 +2,32 @@
 	font-family: Arial, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: monospace;
-	--pure-white: #ffffff;
-	--primary-color: #b9c6d2;
-	--secondary-color: #d0dde9;
-	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
-	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
-	--background: #222;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+
+	--color-white-1: #FFFFFF;
+	--color-black-1: #000000;
+	--color-black-2: #222222;
+
+	--color-cb-teal: #00ffd2;
+	--color-cb-yellow: #fcee0a;
+	--color-cb-red: #fd0130;
+
+	--color-yellow-1: #F3E600;
+	--color-yellow-2: #FFEB0B;
+	--color-yellow-3: #EBE702;
+	--color-cyan-1: #25E1ED;
+	--color-cyan-2: #00FFFF;
+	--color-cyan-3: #02d7f2;
+	--color-blue-1: #007aff;
+	--color-pink-1: #ED1E79;
+	--color-magenta-1: #672026;
+	--color-magenta-2: #FF4A57;
+
+	--accent-color: var(--color-yellow-1);
+	--background: var(--color-black-2);
+	--color: var(--color-white-1);
 }
 
 *,
@@ -29,7 +44,14 @@ body {
 	min-height: 100vh;
 	margin: 0;
 	background-color: var(--background);
-	color: var(--primary-color);
+	color: var(--color);
+}
+
+body>div {
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+	min-height: 100vh;
 }
 
 #svelte {
@@ -85,6 +107,11 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
+}
+
+ul,
+ol {
+	list-style: none;
 }
 
 @media (min-width: 720px) {
