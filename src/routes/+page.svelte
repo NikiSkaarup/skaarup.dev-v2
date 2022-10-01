@@ -1,4 +1,5 @@
 <script lang="ts">
+	import GithubList from '../components/github/List.svelte';
 </script>
 
 <svelte:head>
@@ -8,4 +9,5 @@
 
 <section class="flex flex-col justify-center items-center">
 	<h1 class="uppercase">Welcome to your new SvelteKit app</h1>
+	<GithubList />
 </section>
