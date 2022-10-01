@@ -5,41 +5,10 @@
 
 <Header />
 
-<main>
+<main class="container mx-auto grow">
 	<slot />
 </main>
 
-<footer>
-	<p><a href="/#">a</a></p>
+<footer class="py-10 flex flex-col justify-center items-center">
+	<a href="/#">a</a>
 </footer>
-
-<style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
-</style>
