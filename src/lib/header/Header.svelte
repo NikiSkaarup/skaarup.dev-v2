@@ -21,11 +21,7 @@
 
 		<div class="flex flex-col-reverse md:flex-row flex-nowrap items-center gap-4">
 			<h1 class="capitalize">Niki Wix Skaarup</h1>
-			<img
-				class="rounded-full w-48 h-48 md:w-32 md:h-32 backdrop-blur-sm border-solid border-transparent border-8"
-				src={portrait}
-				alt="Portrait"
-			/>
+			<img class="rounded-full w-48 h-48 md:w-28 md:h-28" src={portrait} alt="Portrait" />
 		</div>
 	</div>
 
