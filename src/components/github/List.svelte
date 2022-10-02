@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 	import type { repository } from './github-types';
 
 	const requestData = {
@@ -32,9 +33,15 @@
 	});
 </script>
 
-<ul class="flex flex-col gap-1">
-	{#each respositories as repository (repository.id)}
-		<li class="font-mono">
+<ul class="flex flex-col gap-1 overflow-clip">
+	{#each respositories as repository, i}
+		<li
+			class="font-mono"
+			in:fly={{
+				y: 75,
+				delay: 75 * i
+			}}
+		>
 			<a
 				href={repository.html_url}
 				target="_blank"
