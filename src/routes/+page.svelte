@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<title>Niki Wix Skaarup</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="" />
 </svelte:head>
 
 <section class="flex flex-col justify-center items-center gap-4">
