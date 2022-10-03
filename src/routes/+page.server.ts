@@ -19,6 +19,9 @@ const requestInit: RequestInit = {
     mode: 'cors'
 };
 
+const cacheLifeTimeMinutes = 5;
+const cacheLifeTime = 1000 * 60 * cacheLifeTimeMinutes;
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
     const filePath = path.format({
@@ -29,16 +32,12 @@ export async function load({ params }) {
 
     try {
         const stat = await fs.stat(filePath);
-        const now = new Date();
-        const time = new Date(now.getTime() - (1000 * 60 * 5));
+        const time = new Date(new Date().getTime() - cacheLifeTime);
 
         if (stat.mtime > time) {
-            console.log('From cache - fresh');
             const file = await fs.readFile(filePath, { encoding: 'utf8' });
             const repositories = JSON.parse(file) as repository[];
             return { repositories };
-        } else {
-            console.log('From cache - old');
         }
     } catch (e) {
         // noop
@@ -47,8 +46,8 @@ export async function load({ params }) {
     const url = requestData.repos_url.replace('{user}', requestData.username);
     const response = await fetch(url, requestInit);
     if (response.ok) {
-        console.log('From github');
-        const repositories = ((await response.json()) as repository[]).sort((a, b) => {
+        const unsortedRepositories = await response.json() as repository[];
+        const repositories = unsortedRepositories.sort((a, b) => {
             const aUpdatedAt = new Date(a.updated_at);
             const bUpdatedAt = new Date(b.updated_at);
             if (aUpdatedAt < bUpdatedAt) return 1;
@@ -59,7 +58,6 @@ export async function load({ params }) {
         try {
             const json = JSON.stringify(repositories);
             fs.writeFile(filePath, json, { encoding: 'utf8' });
-            console.log('To cache - fresh');
         } catch (e) {
             // noop
         }
