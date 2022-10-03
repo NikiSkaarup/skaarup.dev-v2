@@ -4,6 +4,9 @@
 	import EmploymentList from '../components/employment/List.svelte';
 	import ProjectList from '../components/projects/List.svelte';
 	import LinkList from '../components/links/List.svelte';
+	import type { repository } from 'src/components/github/github-types';
+	/** @type {import('./$types').PageData} */
+	export let data: { repositories: repository[] };
 </script>
 
 <svelte:head>
@@ -17,7 +20,7 @@
 	>
 		<Card>
 			<h2 class="font-semibold" slot="title">Github Repos</h2>
-			<GithubList />
+			<GithubList respositories={data.repositories} />
 		</Card>
 		<Card>
 			<h2 class="font-semibold" slot="title">Employement</h2>

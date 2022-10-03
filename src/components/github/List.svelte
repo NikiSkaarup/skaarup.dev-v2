@@ -9,28 +9,28 @@
 		username: 'NikiSkaarup'
 	};
 
-	let respositories: repository[] = [];
+	export let respositories: repository[] = [];
 
-	onMount(async () => {
-		const response = await fetch(requestData.repos_url.replace('{user}', requestData.username), {
-			headers: new Headers({
-				Accept: 'application/vnd.github.v3+json',
-				'Accept-Charset': 'utf-8',
-				'Content-Type': 'application/json'
-			}),
-			method: 'GET',
-			mode: 'cors'
-		});
-		if (!response.ok) return;
+	// onMount(async () => {
+	// 	const response = await fetch(requestData.repos_url.replace('{user}', requestData.username), {
+	// 		headers: new Headers({
+	// 			Accept: 'application/vnd.github.v3+json',
+	// 			'Accept-Charset': 'utf-8',
+	// 			'Content-Type': 'application/json'
+	// 		}),
+	// 		method: 'GET',
+	// 		mode: 'cors'
+	// 	});
+	// 	if (!response.ok) return;
 
-		respositories = ((await response.json()) as repository[]).sort((a, b) => {
-			const aUpdatedAt = new Date(a.updated_at);
-			const bUpdatedAt = new Date(b.updated_at);
-			if (aUpdatedAt < bUpdatedAt) return 1;
-			else if (aUpdatedAt > bUpdatedAt) return -1;
-			return 0;
-		});
-	});
+	// 	respositories = ((await response.json()) as repository[]).sort((a, b) => {
+	// 		const aUpdatedAt = new Date(a.updated_at);
+	// 		const bUpdatedAt = new Date(b.updated_at);
+	// 		if (aUpdatedAt < bUpdatedAt) return 1;
+	// 		else if (aUpdatedAt > bUpdatedAt) return -1;
+	// 		return 0;
+	// 	});
+	// });
 </script>
 
 <ul class="flex flex-col gap-1 overflow-clip">
@@ -68,7 +68,7 @@
 				{/if}
 			</a>
 		</li>
-	{:else}
-		<li>Loading...</li>
+		<!-- {:else}
+		<li>Loading...</li> -->
 	{/each}
 </ul>
