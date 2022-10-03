@@ -1,36 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import type { repository } from './github-types';
-
-	const requestData = {
-		base_url: 'https://api.github.com',
-		repos_url: 'https://api.github.com/users/{user}/repos',
-		username: 'NikiSkaarup'
-	};
-
 	export let respositories: repository[] = [];
-
-	// onMount(async () => {
-	// 	const response = await fetch(requestData.repos_url.replace('{user}', requestData.username), {
-	// 		headers: new Headers({
-	// 			Accept: 'application/vnd.github.v3+json',
-	// 			'Accept-Charset': 'utf-8',
-	// 			'Content-Type': 'application/json'
-	// 		}),
-	// 		method: 'GET',
-	// 		mode: 'cors'
-	// 	});
-	// 	if (!response.ok) return;
-
-	// 	respositories = ((await response.json()) as repository[]).sort((a, b) => {
-	// 		const aUpdatedAt = new Date(a.updated_at);
-	// 		const bUpdatedAt = new Date(b.updated_at);
-	// 		if (aUpdatedAt < bUpdatedAt) return 1;
-	// 		else if (aUpdatedAt > bUpdatedAt) return -1;
-	// 		return 0;
-	// 	});
-	// });
 </script>
 
 <ul class="flex flex-col gap-1 overflow-clip">
@@ -68,7 +39,5 @@
 				{/if}
 			</a>
 		</li>
-		<!-- {:else}
-		<li>Loading...</li> -->
 	{/each}
 </ul>

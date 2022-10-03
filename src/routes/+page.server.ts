@@ -1,5 +1,4 @@
-import { error } from '@sveltejs/kit';
-import type { repository } from 'src/components/github/github-types';
+import type { repository } from '$lib/github/github-types';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -64,5 +63,5 @@ export async function load({ params }) {
         return { repositories };
     }
 
-    throw error(404, 'Not found');
+    return { repositories: [] };
 }

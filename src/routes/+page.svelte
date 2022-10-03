@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Card from '../components/Card.svelte';
-	import GithubList from '../components/github/List.svelte';
-	import EmploymentList from '../components/employment/List.svelte';
-	import ProjectList from '../components/projects/List.svelte';
-	import LinkList from '../components/links/List.svelte';
-	import type { repository } from 'src/components/github/github-types';
+	import Card from '$lib/Card.svelte';
+	import GithubList from '$lib/github/List.svelte';
+	import EmploymentList from '$lib/employment/List.svelte';
+	import ProjectList from '$lib/projects/List.svelte';
+	import LinkList from '$lib/links/List.svelte';
+	import type { repository } from '$lib/github/github-types';
 	/** @type {import('./$types').PageData} */
 	export let data: { repositories: repository[] };
 </script>
