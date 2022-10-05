@@ -1,12 +1,11 @@
 <script lang="ts">
+	import type { PageData } from './$types';
+	export let data: PageData;
 	import Card from '$lib/Card.svelte';
 	import GithubList from '$lib/github/List.svelte';
 	import EmploymentList from '$lib/employment/List.svelte';
 	import ProjectList from '$lib/projects/List.svelte';
 	import LinkList from '$lib/links/List.svelte';
-	import type { repository } from '$lib/github/github-types';
-	/** @type {import('./$types').PageData} */
-	export let data: { repositories: repository[] };
 </script>
 
 <svelte:head>
