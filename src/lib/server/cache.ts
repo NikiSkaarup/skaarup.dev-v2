@@ -13,7 +13,7 @@ const cacheLifeTimeMinutes = 5;
 const cacheLifeTime = 1000 * 60 * cacheLifeTimeMinutes;
 const validCache = (time: Date) => time > new Date(new Date().getTime() - cacheLifeTime);
 
-export const store = async (dir: string, name: string, data: any) => {
+export const store = async (dir: string, name: string, data: unknown) => {
     try {
         const filePath = getPath(dir, name);
         const json = JSON.stringify(data);
@@ -30,8 +30,7 @@ export const load = async (dir: string, name: string) => {
         const stats = await fs.stat(filePath);
         if (!validCache(stats.mtime)) return undefined;
         const file = await fs.readFile(filePath, { encoding: 'utf8' });
-        const data = JSON.parse(file);
-        return data;
+        return JSON.parse(file);
     } catch (e) {
         return undefined
     }
