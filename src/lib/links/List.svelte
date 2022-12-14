@@ -9,27 +9,22 @@
 			id: 2,
 			name: 'Linkedin',
 			url: 'https://linkedin.com/in/nikiskaarup'
-		},
-		{
-			id: 3,
-			name: '',
-			url: ''
 		}
 	];
 </script>
 
 <ul class="flex flex-col gap-1">
-	{#each links as link (link.id)}
+	{#each links as link, i}
 		<li class="font-mono">
 			<a
 				href={link.url}
 				target="_blank"
 				rel="noreferrer"
 				referrerpolicy="no-referrer"
-				class="flex flex-row flex-nowrap justify-between gap-1 hover:text-indigo-900 dark:hover:text-indigo-400 py-1"
+				class="flex flex-row flex-nowrap justify-between gap-1 py-1 hover:text-indigo-900 dark:hover:text-indigo-400"
 			>
 				<span
-					class="overflow-hidden whitespace-nowrap text-ellipsis hover:underline"
+					class="overflow-hidden text-ellipsis whitespace-nowrap hover:underline"
 					title={link.name}
 				>
 					{link.name}
