@@ -1,33 +1,10 @@
 <script lang="ts">
 	import portrait from '../../images/portrait-greyscale.png';
-	import { page } from '$app/stores';
 </script>
 
-<header class="flex justify-between">
-	<div class="h-12 w-12 corner">
-		<a class="flex justify-center items-center h-full w-full text-center" href="/#">
-			<img class="h-8 w-8 object-contain" src="" alt="?" />
-		</a>
-	</div>
-
-	<div class="flex flex-col flex-nowrap p-4">
-		<nav class="flex justify-center" data-sveltekit-prefetch>
-			<ul>
-				<li class:active={$page.url.pathname === '/'}>
-					<a href="/">Home</a>
-				</li>
-			</ul>
-		</nav>
-
-		<div class="flex flex-col-reverse md:flex-row flex-nowrap items-center gap-4">
-			<h1 class="capitalize">Niki Wix Skaarup</h1>
-			<img class="rounded-full w-48 h-48 md:w-28 md:h-28" src={portrait} alt="Portrait" />
-		</div>
-	</div>
-
-	<div class="h-12 w-12 corner">
-		<a class="flex justify-center items-center h-full w-full text-center" href="/#">
-			<img class="h-8 w-8 object-contain" src="" alt="?" />
-		</a>
+<header class="flex flex-col flex-nowrap items-center p-4">
+	<div class="flex flex-col-reverse flex-nowrap items-center gap-4 lg:flex-row">
+		<h1 class="capitalize">Niki Wix Skaarup</h1>
+		<img class="h-48 w-48 rounded-full lg:h-28 lg:w-28" src={portrait} alt="Portrait" />
 	</div>
 </header>

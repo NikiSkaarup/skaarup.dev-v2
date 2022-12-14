@@ -9,6 +9,6 @@
 	<slot />
 </main>
 
-<footer class="flex flex-col items-center justify-center py-10">
+<!-- <footer class="flex flex-col items-center justify-center py-10">
 	<a href="/#">a</a>
-</footer>
+</footer> -->
