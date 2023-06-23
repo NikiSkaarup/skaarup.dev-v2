@@ -1,7 +1,11 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	import '../app.postcss';
 </script>
+
+<svelte:head>
+	<title>Niki Wix Skaarup</title>
+</svelte:head>
 
 <Header />
 
