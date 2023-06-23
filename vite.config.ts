@@ -1,11 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
+import { defineConfig } from 'vite';
+import { svelteInspector } from '@sveltejs/vite-plugin-svelte-inspector';
 
-const config: UserConfig = {
-	plugins: [sveltekit()],
-	build: {
-		sourcemap: true
-	}
-};
-
-export default config;
+export default defineConfig({
+	plugins: [sveltekit(), svelteInspector()]
+});
