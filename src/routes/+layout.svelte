@@ -6,7 +6,7 @@
 	<title>Niki Wix Skaarup</title>
 </svelte:head>
 
-<main class="container mx-auto grow">
+<main class="container mx-auto">
 	<slot />
 </main>
 
