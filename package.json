@@ -1,6 +1,7 @@
 {
 	"name": "skaarup.dev-v2",
 	"version": "0.0.2",
+	"private": true,
 	"scripts": {
 		"start": "node build",
 		"dev": "vite dev",
