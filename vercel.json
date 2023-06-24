@@ -1,9 +1,5 @@
 {
 	"regions": [
-		"arn1",
-		"fra1",
-		"cdg1",
-		"dub1",
-		"lhr1"
+		"arn1"
 	]
 }
