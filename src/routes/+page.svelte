@@ -18,7 +18,7 @@
 					class="inline-block py-2 underline decoration-indigo-500 underline-offset-4 transition-all hover:decoration-2"
 					href="/post/{post.slug}"
 				>
-					Read more
+					Read post
 				</a>
 			</div>
 		</header>
