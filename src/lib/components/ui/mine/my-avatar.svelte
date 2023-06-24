@@ -1,5 +1,5 @@
 <script lang="ts">
-	import portrait from '$lib/../images/portrait-greyscale.png';
+	import portrait from '$lib/../images/portrait-greyscale_48x48.png';
 	import Noise from './noise.svelte';
 	export let id: string;
 	$: noiseId = id + '-noise';
