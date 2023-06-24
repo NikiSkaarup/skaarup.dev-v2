@@ -2,7 +2,7 @@ import posts from '$lib/server/posts';
 import { error } from '@sveltejs/kit';
 
 export const load = async (event) => {
-	const post = posts.find((post) => post.slug === event.params.slug);
+	const post = await posts.getPost(event.params.slug);
 
 	if (!post) {
 		throw error(404, 'Post not found');
@@ -11,6 +11,6 @@ export const load = async (event) => {
 	return {
 		title: post.title,
 		snippet: post.snippet,
-		content: post.content
+		md: post.content
 	};
 };

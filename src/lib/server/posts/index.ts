@@ -1,67 +1,29 @@
-const posts: {
-	title: string;
-	slug: string;
-	snippet: string;
-	content: string[][];
-}[] = [
-	{
-		title: 'Hello World',
-		slug: 'hello-world',
-		snippet:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non.',
-		content: [
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			]
-		]
-	},
-	{
-		title: 'Hello World 2',
-		slug: 'hello-world2',
-		snippet:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-		content: [
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			],
-			[
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?',
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui dolor nostrum, voluptatum doloremque animi saepe?'
-			]
-		]
-	}
-];
+import { env } from '$env/dynamic/private';
+import { Directus } from '@directus/sdk';
 
-export default posts;
+const directus = new Directus<MyCollections>(env.DIRECTUS_URL);
+
+async function getLatestPosts() {
+	const items = await directus.items('posts').readByQuery({
+		sort: ['-date_created', '-date_updated'],
+		fields: ['title', 'slug', 'snippet'],
+		limit: 10
+	});
+
+	return items.data ?? [];
+}
+
+async function getPost(slug: string) {
+	const item = await directus.items('posts').readByQuery({
+		filter: { slug },
+		fields: ['title', 'snippet', 'content']
+	});
+
+	if (item.data === undefined) return undefined;
+	if (item.data === null) return undefined;
+	if (item.data.length === 0) return undefined;
+
+	return item.data[0];
+}
+
+export default { getLatestPosts, getPost };

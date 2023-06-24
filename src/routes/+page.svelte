@@ -2,6 +2,10 @@
 	export let data;
 </script>
 
+{#if data.posts.length === 0}
+	<p class="text-center py-8">No posts yet.</p>
+{/if}
+
 {#each data.posts as post, i}
 	<article class:bg-black={i % 2 !== 0}>
 		<header class="container mx-auto w-full px-4 py-8 space-y-4">
