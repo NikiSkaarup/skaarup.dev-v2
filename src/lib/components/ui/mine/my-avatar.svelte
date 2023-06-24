@@ -2,7 +2,7 @@
 	import portrait from '$lib/../images/portrait-greyscale.png';
 	import Noise from './noise.svelte';
 	export let id: string;
-	const noiseId = id + '-noise';
+	$: noiseId = id + '-noise';
 </script>
 
 <Noise id={noiseId} begin="{id}.mouseenter" />
