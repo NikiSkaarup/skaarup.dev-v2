@@ -1,15 +1,17 @@
 <script lang="ts">
 	import '../app.postcss';
+	import MyCursorEffect from '$lib/components/ui/mine/my-cursor-effect.svelte';
+	import MyHeader from '$lib/components/ui/mine/my-header.svelte';
 </script>
 
 <svelte:head>
 	<title>Niki Wix Skaarup</title>
 </svelte:head>
 
-<main class="container mx-auto">
+<MyHeader />
+
+<main class="py-4">
 	<slot />
 </main>
 
-<!-- <footer class="flex flex-col items-center justify-center py-10">
-	<a href="/#">a</a>
-</footer> -->
+<MyCursorEffect />
