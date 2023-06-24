@@ -10,7 +10,7 @@
 
 <MyHeader />
 
-<main class="py-4">
+<main>
 	<slot />
 </main>
 

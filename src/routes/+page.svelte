@@ -1,13 +1,22 @@
 <script lang="ts">
-	//
+	export let data;
 </script>
 
-<div class="container mx-auto px-4">
-	<div class="flex justify-center">
-		<p class="max-w-prose">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sunt quia minima
-			dignissimos possimus vitae non, fuga, quidem vero sint necessitatibus nulla placeat qui
-			dolor nostrum, voluptatum doloremque animi saepe?
-		</p>
-	</div>
-</div>
+{#each data.posts as post, i}
+	<article class:bg-black={i % 2 !== 0}>
+		<header class="container mx-auto w-full px-4 py-8 space-y-4">
+			<h1 class="text-3xl text-center hyphens-auto break-words">{post.title}</h1>
+			<p class="mx-auto max-w-prose hyphens-auto break-words">
+				{post.snippet}
+			</p>
+			<div class="mx-auto max-w-prose">
+				<a
+					class="inline-block py-2 underline decoration-indigo-500 underline-offset-4 transition-all hover:decoration-2"
+					href="/post/{post.slug}"
+				>
+					Read more
+				</a>
+			</div>
+		</header>
+	</article>
+{/each}
