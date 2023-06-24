@@ -3,11 +3,11 @@
 	import { spring } from 'svelte/motion';
 	import { dev } from '$app/environment';
 
-	const top = spring(0, {
+	const top = spring(100, {
 		damping: 0.7,
 		stiffness: 0.006
 	});
-	const left = spring(0, {
+	const left = spring(300, {
 		damping: 0.75,
 		stiffness: 0.003
 	});
@@ -50,11 +50,11 @@
 				style="animation-duration: 300s;"
 			>
 				<div
-					class="ml-[5vw] w-[25vw] h-[60vw] rounded-full animate-spin bg-gradient-to-r opacity-60 from-violet-950 to-indigo-800"
+					class="ml-[7.5vw] w-[25vw] h-[70vw] rounded-full animate-spin bg-gradient-to-r opacity-90 from-violet-950 to-indigo-800"
 					style="animation-duration: 120s;"
 				/>
 				<div
-					class="w-[35vw] h-[35vw] rounded-full opacity-80 overflow-hidden animate-spin bg-gradient-to-r from-purple-950 to-indigo-800"
+					class="w-[40vw] h-[40vw] mt-[15vw] rounded-full opacity-90 overflow-hidden animate-spin bg-gradient-to-r from-purple-950 to-indigo-800"
 					style="animation-duration: 200s;"
 				/>
 			</div>
