@@ -17,7 +17,7 @@
 	{#each data.content as md, i}
 		<section class:bg-black={i % 2 === 0}>
 			<div class="container mx-auto px-4 py-8 w-full">
-				<div class="mx-auto max-w-prose hyphens-auto break-words">
+				<div class="mx-auto max-w-prose hyphens-auto break-words space-y-4">
 					<Markdown {md} {plugins} />
 				</div>
 			</div>
