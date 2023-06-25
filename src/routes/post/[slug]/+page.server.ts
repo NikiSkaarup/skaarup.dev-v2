@@ -11,6 +11,6 @@ export const load = async (event) => {
 	return {
 		title: post.title,
 		snippet: post.snippet,
-		md: post.content
+		content: post.post_content.map((content) => content.item.md)
 	};
 };
