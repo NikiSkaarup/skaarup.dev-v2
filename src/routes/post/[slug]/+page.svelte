@@ -8,7 +8,9 @@
 
 <article>
 	<header class="container mx-auto w-full space-y-4 px-4 py-8">
-		<h1 class="hyphens-auto break-words text-center text-3xl">{data.title}</h1>
+		<h1 class="mx-auto max-w-prose hyphens-auto break-words text-center text-3xl">
+			{data.title}
+		</h1>
 		<p class="mx-auto max-w-prose hyphens-auto break-words text-center">
 			{data.snippet}
 		</p>
@@ -24,3 +26,15 @@
 		</section>
 	{/each}
 </article>
+
+<style>
+	header {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 100% auto 300px;
+	}
+
+	section {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 100% auto 600px;
+	}
+</style>
