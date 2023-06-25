@@ -3,6 +3,15 @@ import { Directus } from '@directus/sdk';
 
 const directus = new Directus<MyCollections>(env.DIRECTUS_URL);
 
+async function getSlugs() {
+	const items = await directus.items('posts').readByQuery({
+		sort: ['slug'],
+		fields: ['slug']
+	});
+
+	return items.data?.map((val) => val.slug) ?? [];
+}
+
 async function getLatestPosts() {
 	const items = await directus.items('posts').readByQuery({
 		sort: ['-date_created', '-date_updated'],
@@ -27,4 +36,4 @@ async function getPost(slug: string) {
 	return item.data[0];
 }
 
-export default { getLatestPosts, getPost };
+export default { getLatestPosts, getPost, getSlugs };
