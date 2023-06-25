@@ -16,7 +16,8 @@ async function getLatestPosts() {
 async function getPost(slug: string) {
 	const item = await directus.items('posts').readByQuery({
 		filter: { slug },
-		fields: ['title', 'snippet', 'content']
+		fields: ['title', 'snippet', 'post_content.item.md'],
+		limit: 1
 	});
 
 	if (item.data === undefined) return undefined;
