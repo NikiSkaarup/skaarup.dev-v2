@@ -2,14 +2,10 @@
 	export let data;
 </script>
 
-{#if data.posts.length === 0}
-	<p class="text-center py-8">No posts yet.</p>
-{/if}
-
 {#each data.posts as post, i}
 	<article class:bg-black={i % 2 !== 0}>
-		<header class="container mx-auto w-full px-4 py-8 space-y-4">
-			<h1 class="text-3xl text-center hyphens-auto break-words">{post.title}</h1>
+		<header class="container mx-auto w-full space-y-4 px-4 py-8">
+			<h1 class="hyphens-auto break-words text-center text-3xl">{post.title}</h1>
 			<p class="mx-auto max-w-prose hyphens-auto break-words">
 				{post.snippet}
 			</p>
@@ -23,4 +19,6 @@
 			</div>
 		</header>
 	</article>
+{:else}
+	<p class="text-center py-8">No posts yet.</p>
 {/each}
