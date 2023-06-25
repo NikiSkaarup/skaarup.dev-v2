@@ -10,7 +10,7 @@
 	export let baseFrequency: string = '0.7,0.8';
 </script>
 
-<svg class="absolute opacity-0 pointer-events-none -top-full -left-full w-0 h-0 overflow-hidden">
+<svg class="pointer-events-none absolute -left-full -top-full h-0 w-0 overflow-hidden opacity-0">
 	<defs>
 		<filter {id}>
 			<feTurbulence type="fractalNoise" {baseFrequency} {seed}>

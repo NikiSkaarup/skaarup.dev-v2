@@ -6,10 +6,10 @@
 </script>
 
 <Noise id={noiseId} begin="{id}.mouseenter" />
-<div {id} class="rounded-full overflow-hidden h-12 aspect-square">
+<div {id} class="aspect-square h-12 overflow-hidden rounded-full">
 	<img
 		loading="eager"
-		class="object-cover h-full aspect-square"
+		class="aspect-square h-full object-cover"
 		src={portrait}
 		alt="portrait"
 		style="filter: url(#{noiseId});"
