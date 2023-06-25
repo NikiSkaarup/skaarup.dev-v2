@@ -16,36 +16,52 @@
 
 <svelte:window
 	on:mousemove={(event) => {
-		left.set(event.clientX - effect.clientWidth / 2);
-		top.set(event.clientY - effect.clientHeight / 2);
+		const clientWidth = effect.clientWidth / 2;
+		const clientHeight = effect.clientHeight / 2;
+		const newLeft = event.clientX - clientWidth;
+		const newTop = event.clientY - clientHeight;
+		if (newLeft > window.innerWidth) {
+			left.set(window.innerWidth);
+		} else if (newLeft < -clientWidth) {
+			left.set(-clientWidth);
+		} else {
+			left.set(newLeft);
+		}
+		if (newTop > window.innerHeight) {
+			top.set(window.innerHeight);
+		} else if (newTop < -clientHeight) {
+			top.set(-clientHeight);
+		} else {
+			top.set(newTop);
+		}
 	}}
 />
 
 <div
 	transition:fade={{ duration: 2000 }}
-	class="fixed pointer-events-none inset-0 overflow-hidden -z-10"
+	class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
 >
 	{#if dev}
-		<div class="fixed bottom-2 right-2 font-mono flex flex-col items-end opacity-40 text-xs">
+		<div class="fixed bottom-2 right-2 flex flex-col items-end font-mono text-xs opacity-40">
 			<span>{$left.toFixed()} x</span>
 			<span>{$top.toFixed()} y</span>
 		</div>
 	{/if}
 	<div
 		bind:this={effect}
-		class="absolute top-0 left-0 w-fit h-fit will-change-transform filter origin-center transform-gpu -z-10"
+		class="absolute left-0 top-0 -z-10 h-fit w-fit origin-center transform-gpu filter will-change-transform"
 		style="--tw-translate-x: {$left.toFixed()}px; --tw-translate-y: {$top.toFixed()}px; --tw-blur: blur(128px);"
 	>
 		<div
-			class="grid items-center justify-center animate-spin"
+			class="grid animate-spin items-center justify-center"
 			style="animation-duration: 300s;"
 		>
 			<div
-				class="ml-[7.5vw] w-[25vw] h-[70vw] rounded-full animate-spin bg-gradient-to-r opacity-90 from-violet-950 to-indigo-800"
+				class="ml-[7.5vw] h-[70vw] w-[25vw] animate-spin rounded-full bg-gradient-to-r from-violet-950 to-indigo-800 opacity-90"
 				style="animation-duration: 120s;"
 			/>
 			<div
-				class="w-[40vw] h-[40vw] mt-[15vw] rounded-full opacity-90 overflow-hidden animate-spin bg-gradient-to-r from-purple-950 to-indigo-800"
+				class="mt-[15vw] h-[40vw] w-[40vw] animate-spin overflow-hidden rounded-full bg-gradient-to-r from-purple-950 to-indigo-800 opacity-90"
 				style="animation-duration: 200s;"
 			/>
 		</div>
