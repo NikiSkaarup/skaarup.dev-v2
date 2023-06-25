@@ -7,8 +7,8 @@
 </script>
 
 <article>
-	<header class="container mx-auto w-full px-4 py-8 space-y-4">
-		<h1 class="text-3xl text-center hyphens-auto break-words">{data.title}</h1>
+	<header class="container mx-auto w-full space-y-4 px-4 py-8">
+		<h1 class="hyphens-auto break-words text-center text-3xl">{data.title}</h1>
 		<p class="mx-auto max-w-prose hyphens-auto break-words text-center">
 			{data.snippet}
 		</p>
@@ -16,8 +16,8 @@
 
 	{#each data.content as md, i}
 		<section class:bg-black={i % 2 === 0}>
-			<div class="container mx-auto px-4 py-8 w-full">
-				<div class="mx-auto max-w-prose hyphens-auto break-words space-y-4">
+			<div class="container mx-auto w-full px-4 py-8">
+				<div class="mx-auto max-w-prose space-y-4 hyphens-auto break-words">
 					<Markdown {md} {plugins} />
 				</div>
 			</div>

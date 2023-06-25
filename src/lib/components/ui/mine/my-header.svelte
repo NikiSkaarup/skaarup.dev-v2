@@ -2,15 +2,15 @@
 	import MyAvatar from './my-avatar.svelte';
 </script>
 
-<header class="sticky top-0 bg-black drop-shadow font-mono z-20">
-	<div class="container mx-auto grid grid-cols-3 py-2 px-4">
-		<div class="flex gap-8 items-center">Developer</div>
+<header class="sticky top-0 z-20 bg-black font-mono drop-shadow">
+	<div class="container mx-auto grid grid-cols-3 px-4 py-2">
+		<div class="flex items-center gap-8">Developer</div>
 
-		<div class="flex justify-center items-center">
+		<div class="flex items-center justify-center">
 			<a href="/"> Niki Wix Skaarup </a>
 		</div>
 
-		<div class="flex gap-8 justify-end items-center">
+		<div class="flex items-center justify-end gap-8">
 			<a
 				class="uppercase"
 				href="https://github.com/nikiskaarup"
