@@ -30,11 +30,11 @@
 <style>
 	header {
 		content-visibility: auto;
-		contain-intrinsic-size: auto 100% auto 300px;
+		contain-intrinsic-size: auto 65ch auto 300px;
 	}
 
 	section {
 		content-visibility: auto;
-		contain-intrinsic-size: auto 100% auto 600px;
+		contain-intrinsic-size: auto 65ch auto 600px;
 	}
 </style>
