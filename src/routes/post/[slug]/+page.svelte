@@ -16,8 +16,8 @@
 		</p>
 	</header>
 
-	{#each data.content as md, i}
-		<section class:bg-black={i % 2 === 0}>
+	{#each data.content as md (md)}
+		<section>
 			<div class="container mx-auto w-full px-4 py-8">
 				<div class="mx-auto max-w-prose space-y-4 hyphens-auto break-words">
 					<Markdown {md} {plugins} />
@@ -27,7 +27,7 @@
 	{/each}
 </article>
 
-<style>
+<style lang="postcss">
 	header {
 		content-visibility: auto;
 		contain-intrinsic-size: auto 65ch auto 300px;
@@ -36,5 +36,9 @@
 	section {
 		content-visibility: auto;
 		contain-intrinsic-size: auto 65ch auto 600px;
+	}
+
+	section:nth-of-type(odd) {
+		@apply bg-black;
 	}
 </style>
