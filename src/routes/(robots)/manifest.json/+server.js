@@ -4,7 +4,6 @@ export const GET = async () =>
 	json({
 		name: 'Niki Wix Skaarup',
 		short_name: 'NWS',
-		// start_url: '.',
 		display: 'browser',
 		background_color: '#141141',
 		theme_color: '#371D85',

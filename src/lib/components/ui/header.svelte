@@ -1,10 +1,12 @@
 <script>
-	import MyAvatar from './my-avatar.svelte';
+	import MyAvatar from './avatar.svelte';
 </script>
 
 <header class="sticky top-0 z-20 bg-black font-mono drop-shadow">
-	<div class="container mx-auto grid grid-cols-3 px-4 py-2">
-		<div class="flex items-center gap-8">Developer</div>
+	<div class="mx-auto grid grid-cols-3 py-2 px-4 xl:max-w-7xl">
+		<div class="flex items-center gap-8">
+			<a href="/uses"> Developer </a>
+		</div>
 
 		<div class="flex items-center justify-center">
 			<a href="/"> Niki Wix Skaarup </a>

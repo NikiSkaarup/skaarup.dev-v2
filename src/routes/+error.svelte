@@ -1,9 +1,11 @@
-<script lang="ts">
+<script>
 	import { page } from '$app/stores';
 </script>
 
 <article>
-	<header class="container mx-auto w-full space-y-4 px-4 py-8">
+	<header
+		class="container mx-auto w-full space-y-4 py-8 px-4 [contain-intrinsic-size:auto_65ch_auto_300px] [content-visibility:auto]"
+	>
 		<h1 class="mx-auto max-w-prose hyphens-auto break-words text-center text-3xl">
 			{$page.status}
 		</h1>
@@ -20,10 +22,3 @@
 		</p>
 	</header>
 </article>
-
-<style>
-	header {
-		content-visibility: auto;
-		contain-intrinsic-size: auto 65ch auto 300px;
-	}
-</style>

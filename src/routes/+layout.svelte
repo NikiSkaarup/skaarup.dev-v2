@@ -1,16 +1,16 @@
-<script lang="ts">
-	import '../app.postcss';
-	import MyCursorEffect from '$lib/components/ui/mine/my-cursor-effect.svelte';
-	import MyHeader from '$lib/components/ui/mine/my-header.svelte';
-	import MyHead from '$lib/components/ui/mine/my-head.svelte';
+<script>
+	import '$lib/../app.css';
+	import CursorEffect from '$lib/components/ui/cursor-effect.svelte';
+	import Header from '$lib/components/ui/header.svelte';
+	import Head from '$lib/components/ui/head.svelte';
 </script>
 
-<MyHead />
+<Head />
 
-<MyHeader />
+<Header />
 
 <main>
 	<slot />
 </main>
 
-<MyCursorEffect />
+<CursorEffect />

@@ -1,10 +1,12 @@
-<script lang="ts">
+<script>
 	import { page } from '$app/stores';
 
 	const titleBase = 'Niki Wix Skaarup';
 	$: title = $page.url.pathname === '/' ? titleBase : `${titleBase} - ${$page.data.title}`;
-	$: description = ($page.data.snippet as string | undefined) ?? '';
-	$: image = ($page.data.image as string | undefined) ?? '';
+	/** @type {string}*/
+	$: description = $page.data.snippet ?? '';
+	/** @type {string}*/
+	$: image = $page.data.image ?? '';
 </script>
 
 <svelte:head>

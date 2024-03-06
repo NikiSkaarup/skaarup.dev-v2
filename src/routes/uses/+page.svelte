@@ -1,166 +1,129 @@
-<script lang="ts">
-	import MyLink from '$lib/components/ui/mine/my-link.svelte';
-	import MyUsesSection from '$lib/components/ui/mine/my-uses-section.svelte';
+<script>
+	import List from '$lib/components/ui/list.svelte';
+	import Link from '$lib/components/ui/link.svelte';
+	import UsesSection from '$lib/components/ui/uses-section.svelte';
 </script>
 
 <article>
-	<header class="container mx-auto w-full space-y-4 px-4 py-8">
+	<header class="mx-auto space-y-4 py-8 px-4 xl:max-w-7xl">
 		<h1 class="mx-auto max-w-prose hyphens-auto break-words text-center text-3xl">Uses</h1>
-		<p class="mx-auto max-w-prose hyphens-auto break-words text-center">
+		<p class="mx-auto max-w-prose hyphens-auto text-balance break-words text-center">
 			This page is a list of tools and software I use as a developer.
 		</p>
 	</header>
 
-	<MyUsesSection id="editor">
+	<UsesSection id="editor">
 		<svelte:fragment slot="title">
 			<a href="#editor"> Editor </a>
 		</svelte:fragment>
-		<ul>
+		<List>
 			<li>
-				<MyLink href="https://code.visualstudio.com">Visual Studio Code</MyLink>
+				<Link href="https://code.visualstudio.com">Visual Studio Code</Link>
 			</li>
 			<li>
 				Theme -
-				<MyLink href="https://github.com/catppuccin/vscode">Catppuccin mocha</MyLink>
+				<Link href="https://github.com/catppuccin/vscode">Catppuccin mocha</Link>
 				/
-				<MyLink href="https://github.com/dhedgecock/radical-vscode">Radical</MyLink>
+				<Link href="https://github.com/dhedgecock/radical-vscode">Radical</Link>
 				<span class="text-sm">(either one depending on my mood)</span>
 			</li>
 			<li>
-				Font - <MyLink href="https://github.com/microsoft/cascadia-code">
-					Cascadia code
-				</MyLink>
+				Font - <Link href="https://vercel.com/font/mono">Geist Mono</Link>
 			</li>
-		</ul>
-	</MyUsesSection>
-	<MyUsesSection id="terminal">
+		</List>
+	</UsesSection>
+	<UsesSection id="terminal">
 		<svelte:fragment slot="title">
 			<a href="#terminal"> Terminal </a>
 		</svelte:fragment>
-		<ul>
-			<li><MyLink href="https://github.com/alacritty/alacritty">Alacritty</MyLink></li>
+		<List>
+			<li><Link href="https://github.com/alacritty/alacritty">Alacritty</Link></li>
 			<li>
 				Theme -
-				<MyLink href="https://github.com/catppuccin/alacritty">Catppuccin mocha</MyLink>
+				<Link href="https://github.com/catppuccin/alacritty">Catppuccin mocha</Link>
 			</li>
 			<li>
-				Shell - <MyLink href="https://github.com/fish-shell/fish-shell">Fish</MyLink>
+				Shell - <Link href="https://github.com/fish-shell/fish-shell">Fish</Link>
 			</li>
 			<li>
-				Prompt - <MyLink href="https://github.com/starship/starship">Starship</MyLink>
+				Prompt - <Link href="https://github.com/starship/starship">Starship</Link>
 			</li>
 			<li>
-				Font - <MyLink
-					href="https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/CascadiaCode"
+				Font - <Link
+					href="https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/GeistMono"
 				>
-					Caskaydia Cove Nerd Font
-				</MyLink>
+					Geist Mono Nerd Font
+				</Link>
 			</li>
-		</ul>
-	</MyUsesSection>
-	<MyUsesSection id="browser-extensions">
+		</List>
+	</UsesSection>
+	<UsesSection id="browser-extensions">
 		<svelte:fragment slot="title">
 			<a href="#browser-extensions"> Browser extensions </a>
 		</svelte:fragment>
-		<ul>
-			<li><MyLink href="https://github.com/gorhill/uBlockp">uBlock Origin</MyLink></li>
-			<li><MyLink href="https://github.com/darkreader/darkreader">Dark Reader</MyLink></li>
+		<List>
+			<li><Link href="https://github.com/gorhill/uBlock">uBlock Origin</Link></li>
+			<li><Link href="https://github.com/darkreader/darkreader">Dark Reader</Link></li>
 			<li>
-				<MyLink href="https://github.com/violentmonkey/violentmonkey">Violentmonkey</MyLink>
+				<Link href="https://github.com/violentmonkey/violentmonkey">Violentmonkey</Link>
 			</li>
-			<li><MyLink href="https://github.com/openstyles/stylus">Stylus</MyLink></li>
-		</ul>
-	</MyUsesSection>
-	<MyUsesSection id="desktop-apps">
+			<li><Link href="https://github.com/openstyles/stylus">Stylus</Link></li>
+		</List>
+	</UsesSection>
+	<UsesSection id="desktop-apps">
 		<svelte:fragment slot="title">
 			<a href="#desktop-apps"> Desktop Apps </a>
 		</svelte:fragment>
-		<ul>
-			<li><MyLink href="https://spotify.com/">Spotify</MyLink></li>
-			<li><MyLink href="https://desktop.github.com/">Github Desktop</MyLink></li>
+		<List>
+			<li><Link href="https://spotify.com">Spotify</Link></li>
+			<li><Link href="https://desktop.github.com">Github Desktop</Link></li>
 			<li>
-				<MyLink href="https://www.mozilla.org/en-US/firefox/new/">Firefox</MyLink>
+				<Link href="https://www.mozilla.org/en-US/firefox/new">Firefox</Link>
 			</li>
 			<li>
-				<MyLink href="https://www.mozilla.org/en-US/firefox/developer/">
+				<Link href="https://www.mozilla.org/en-US/firefox/developer">
 					Firefox Developer Edition
-				</MyLink>
+				</Link>
 			</li>
-			<li><MyLink href="https://sqlitebrowser.org/">DB Browser for SQLite</MyLink></li>
-			<li><MyLink href="https://etcher.balena.io/">Balena Etcher</MyLink></li>
-			<li><MyLink href="https://discord.com/">Discord</MyLink></li>
-			<li><MyLink href="https://obsproject.com/">OBS Studio</MyLink></li>
+			<li><Link href="https://sqlitebrowser.org">DB Browser for SQLite</Link></li>
+			<li><Link href="https://etcher.balena.io">Balena Etcher</Link></li>
+			<li><Link href="https://discord.com">Discord</Link></li>
+			<li><Link href="https://obsproject.com">OBS Studio</Link></li>
 			<li>
-				<MyLink href="https://github.com/responsively-org/responsively-app">
+				<Link href="https://github.com/responsively-org/responsively-app">
 					Responsively App
-				</MyLink>
+				</Link>
 			</li>
-		</ul>
-	</MyUsesSection>
-	<MyUsesSection id="cli">
+		</List>
+	</UsesSection>
+	<UsesSection id="cli">
 		<svelte:fragment slot="title">
 			<a href="#cli"> CLIs </a>
 		</svelte:fragment>
-		<ul>
+		<List>
 			<li>
-				Node Version Manager - <MyLink href="https://github.com/Schniz/fnm">fnm</MyLink>
+				Node Version Manager - <Link href="https://github.com/Schniz/fnm">fnm</Link>
 			</li>
-			<li><MyLink href="https://github.com/pnpm/pnpm">pnpm</MyLink></li>
+			<li><Link href="https://pnpm.io/">pnpm</Link></li>
+			<li><Link href="https://bun.sh">bun</Link></li>
 			<li>
-				<MyLink href="https://github.com/aristocratos/btop">btop</MyLink> - <MyLink
+				<Link href="https://github.com/aristocratos/btop">btop</Link> - <Link
 					href="https://github.com/catppuccin/btop"
 				>
 					Catppuccin mocha
-				</MyLink>
+				</Link>
 			</li>
 			<li>
-				Localhost reverse proxy - <MyLink href="https://github.com/caddyserver/caddy">
+				Localhost reverse proxy - <Link href="https://github.com/caddyserver/caddy">
 					caddy
-				</MyLink>
+				</Link>
 			</li>
 			<li>
-				<MyLink href="https://github.com/shssoichiro/oxipng">Oxipng</MyLink> optimize png images
+				<Link href="https://github.com/shssoichiro/oxipng">Oxipng</Link> optimize png images
 			</li>
 			<li>
-				<MyLink href="https://github.com/harlan-zw/unlighthouse">unlighthouse</MyLink>
+				<Link href="https://unlighthouse.dev">unlighthouse</Link>
 			</li>
-			<li>
-				<MyLink href="https://github.com/ScoopInstaller/Scoop">scoop</MyLink> (basically apt
-				for windows)
-			</li>
-		</ul>
-	</MyUsesSection>
-	<!-- <MyUsesSection id="setup">
-		<svelte:fragment slot="title">
-			<a href="#setup"> Setups </a>
-		</svelte:fragment>
-		<ul>
-			<li><MyLink href="https://github.com/Schniz/fnm">fnm</MyLink></li>
-		</ul>
-	</MyUsesSection>
-	<MyUsesSection id="servers">
-		<svelte:fragment slot="title">
-			<a href="#servers"> Servers </a>
-		</svelte:fragment>
-		<ul>
-			<li><MyLink href="https://github.com/Schniz/fnm">fnm</MyLink></li>
-		</ul>
-	</MyUsesSection>
-	<MyUsesSection id="browser">
-		<svelte:fragment slot="title">
-			<a href="#browser"> Browser </a>
-		</svelte:fragment>
-		<ul>
-			<li><MyLink href="https://github.com/Schniz/fnm">fnm</MyLink></li>
-		</ul>
-	</MyUsesSection> -->
+		</List>
+	</UsesSection>
 </article>
-
-<style lang="postcss">
-	article :global(a) {
-		@apply underline decoration-indigo-500 underline-offset-4 transition-all hover:decoration-2;
-	}
-	ul {
-		@apply list-inside list-disc space-y-2;
-	}
-</style>

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import { fade } from 'svelte/transition';
 	import { spring } from 'svelte/motion';
 	import { dev } from '$app/environment';
@@ -11,7 +11,8 @@
 		damping: 0.75,
 		stiffness: 0.003
 	});
-	let effect: HTMLDivElement;
+	/** @type {HTMLDivElement}*/
+	let effect;
 </script>
 
 <svelte:window
@@ -42,14 +43,14 @@
 	class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
 >
 	{#if dev}
-		<div class="fixed bottom-2 right-2 flex flex-col items-end font-mono text-xs opacity-40">
+		<div class="fixed right-2 bottom-2 flex flex-col items-end font-mono text-xs opacity-40">
 			<span>{$left.toFixed()} x</span>
 			<span>{$top.toFixed()} y</span>
 		</div>
 	{/if}
 	<div
 		bind:this={effect}
-		class="absolute left-0 top-0 -z-10 h-fit w-fit origin-center transform-gpu filter will-change-transform"
+		class="absolute top-0 left-0 -z-10 h-fit w-fit origin-center transform-gpu filter will-change-transform"
 		style="--tw-translate-x: {$left.toFixed()}px; --tw-translate-y: {$top.toFixed()}px; --tw-blur: blur(128px);"
 	>
 		<div
