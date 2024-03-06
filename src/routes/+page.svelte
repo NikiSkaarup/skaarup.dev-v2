@@ -1,5 +1,5 @@
 <article class="even:bg-black">
-	<header class="container mx-auto w-full space-y-4 py-8 px-4">
+	<header class="mx-auto w-full space-y-4 py-8 px-4 xl:max-w-7xl">
 		<h1 class="hyphens-auto break-words text-center text-3xl"><span></span></h1>
 		<p class="mx-auto max-w-prose hyphens-auto break-words text-center"></p>
 		<div class="mx-auto max-w-prose">

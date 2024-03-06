@@ -4,7 +4,7 @@
 
 <article>
 	<header
-		class="container mx-auto w-full space-y-4 py-8 px-4 [contain-intrinsic-size:auto_65ch_auto_300px] [content-visibility:auto]"
+		class="mx-auto w-full space-y-4 py-8 px-4 [contain-intrinsic-size:auto_65ch_auto_300px] [content-visibility:auto] xl:max-w-7xl"
 	>
 		<h1 class="mx-auto max-w-prose hyphens-auto break-words text-center text-3xl">
 			{$page.status}
