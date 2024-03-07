@@ -4,7 +4,6 @@ import adapter from '@calle.wester/svelte-adapter-bun';
 const config = {
 	kit: {
 		adapter: adapter({
-			out: 'public',
 			dynamic_origin: true
 		})
 	}
