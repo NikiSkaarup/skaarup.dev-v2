@@ -1,11 +1,9 @@
-import adapter from '@calle.wester/svelte-adapter-bun';
+import adapter from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({
-			dynamic_origin: true
-		})
+		adapter: adapter()
 	}
 };
 

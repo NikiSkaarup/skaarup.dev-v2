@@ -15,7 +15,7 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@calle.wester/svelte-adapter-bun": "^0.5.7",
+    "@sveltejs/adapter-vercel": "^5.1.0",
     "@sveltejs/kit": "^2.5.2",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tailwindcss/vite": "next",

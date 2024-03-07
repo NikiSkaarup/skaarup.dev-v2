@@ -1,5 +1,7 @@
 {
-	"regions": [
-		"arn1"
-	]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "build",
+  "regions": [
+    "arn1"
+  ]
 }
