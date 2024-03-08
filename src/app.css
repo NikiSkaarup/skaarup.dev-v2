@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-my-purple: #141141;
+	--color-blurple: #141141;
 }
 
 html,
@@ -10,7 +10,7 @@ body {
 }
 
 body {
-	@apply bg-my-purple bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
+	@apply bg-blurple bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
 	background-image: radial-gradient(
 			at 0% 0%,
 			color-mix(in srgb, var(--color-indigo-500), transparent 77%) 0px,
