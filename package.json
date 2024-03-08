@@ -15,9 +15,9 @@
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "@sveltejs/kit": "^2.5.2",
+    "@sveltejs/kit": "^2.5.3",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "@tailwindcss/vite": "next",
+    "@tailwindcss/vite": "^4.0.0-alpha.7",
     "@types/bun": "latest",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -28,7 +28,7 @@
     "svelte": "^4.2.12",
     "svelte-adapter-bun": "^0.5.2",
     "svelte-check": "^3.6.6",
-    "tailwindcss": "next",
+    "tailwindcss": "^4.0.0-alpha.7",
     "typescript": "^5.4.2",
     "vite": "^5.1.5"
   }
