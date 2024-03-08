@@ -4,14 +4,14 @@ For now it is just a portfolio site, but in the future it should also have links
 
 [Prod Site](https://skaarup.dev)
 
-[Dev Site](https://dev.skaarup.dev)
+~~[Dev Site](https://dev.skaarup.dev)~~ (Not available at the moment, test in prod atm)
 
 ## Developing
 
-Once you've cloned the repository and installed dependencies with `pnpm install`, start a development server:
+Once you've cloned the repository and installed dependencies with `bun install`, start a development server:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 ## Building
@@ -19,9 +19,7 @@ pnpm dev
 To create a production version of your app:
 
 ```bash
-pnpm build
+bun run build
 ```
 
-You can preview the production build with `pnpm preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+You can preview the production build with `bun preview`.
