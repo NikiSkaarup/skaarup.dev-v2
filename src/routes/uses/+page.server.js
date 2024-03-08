@@ -1,3 +1,5 @@
 export const load = async () => {
-	return {};
+	return {
+		title: 'uses'
+	};
 };
