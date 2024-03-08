@@ -4,8 +4,13 @@
 	--color-my-purple: #141141;
 }
 
+html,
 body {
-	@apply bg-my-purple bg-cover bg-fixed bg-center bg-no-repeat text-gray-100;
+	@apply min-h-dvh;
+}
+
+body {
+	@apply bg-my-purple bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
 	background-image: radial-gradient(
 			at 0% 0%,
 			color-mix(in srgb, var(--color-indigo-500), transparent 77%) 0px,

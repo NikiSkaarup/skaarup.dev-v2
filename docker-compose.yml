@@ -8,3 +8,4 @@ services:
     ports:
       - "3000:3000"
     container_name: skaarup-dev-v2
+    restart: unless-stopped
