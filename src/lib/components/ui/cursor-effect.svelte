@@ -3,16 +3,14 @@
 	import { spring } from 'svelte/motion';
 	import { dev } from '$app/environment';
 
-	const top = spring(100, {
-		stiffness: 0.005,
-		damping: 0.99,
-		precision: 0.7
-	});
-	const left = spring(300, {
-		stiffness: 0.005,
-		damping: 0.99,
-		precision: 0.7
-	});
+	const point = spring(
+		{ x: 100, y: 300 },
+		{
+			stiffness: 0.005,
+			damping: 0.99,
+			precision: 0.7
+		}
+	);
 
 	/**
 	 * @param {MouseEvent & { currentTarget: EventTarget & Window; }} event
@@ -22,11 +20,11 @@
 		const iw = window.innerWidth;
 		const cw = effect.clientWidth / 2;
 		const ch = effect.clientHeight / 2;
-		const l = event.clientX - cw;
-		const t = event.clientY - ch;
-
-		top.set(t > ih ? ih : t < -ch ? -ch : t);
-		left.set(l > iw ? iw : l < -cw ? -cw : l);
+		const cx = event.clientX - cw;
+		const cy = event.clientY - ch;
+		const x = cx > iw ? iw : cx < -cw ? -cw : cx;
+		const y = cy > ih ? ih : cy < -ch ? -ch : cy;
+		point.set({ x, y });
 	}
 
 	/** @type {HTMLDivElement}*/
@@ -43,14 +41,14 @@
 		<div
 			class="fixed right-2 bottom-2 flex flex-col items-end font-mono text-xs opacity-40 contain-paint"
 		>
-			<span>{$left.toFixed()} x</span>
-			<span>{$top.toFixed()} y</span>
+			<span>{$point.x.toFixed()} x</span>
+			<span>{$point.y.toFixed()} y</span>
 		</div>
 	{/if}
 	<div
 		bind:this={effect}
 		class="absolute top-0 left-0 h-fit w-fit origin-center translate-[0] transform-gpu blur-3xl filter will-change-transform contain-paint"
-		style="--tw-translate-x: {$left.toFixed()}px; --tw-translate-y: {$top.toFixed()}px;"
+		style="--tw-translate-x: {$point.x.toFixed()}px; --tw-translate-y: {$point.y.toFixed()}px;"
 	>
 		<div
 			class="grid animate-spin items-center justify-center"
