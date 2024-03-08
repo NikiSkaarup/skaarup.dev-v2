@@ -47,40 +47,29 @@
 	{/if}
 	<div
 		bind:this={effect}
-		class="absolute top-0 left-0 h-fit w-fit origin-center translate-[0] transform-gpu blur-3xl filter will-change-transform contain-paint"
+		class="absolute top-0 left-0 h-fit w-fit origin-center translate-x-0 translate-y-0 transform-gpu blur-3xl filter will-change-transform contain-paint"
 		style="--tw-translate-x: {$point.x.toFixed()}px; --tw-translate-y: {$point.y.toFixed()}px;"
 	>
 		<div
-			class="grid animate-spin items-center justify-center"
+			class="grid animate-spin auto-cols-fr auto-rows-fr items-center justify-center"
 			style="animation-duration: 300s;"
 		>
 			<div
-				class="-ml-[7.5vw] h-[20vw] w-[65vw] animate-spin rounded-full bg-gradient-to-r from-indigo-500 from-0% via-purple-500 via-50% to-violet-500 to-100% opacity-20"
+				class="col-span-full row-span-full -ml-[7.5vw] h-[20vw] w-[65vw] animate-spin rounded-full bg-gradient-to-r from-indigo-500 from-0% via-purple-500 via-50% to-violet-500 to-100% opacity-20"
 				style="animation-duration: 180s;"
 			/>
 			<div
-				class="-mt-[15vw] h-[50vw] w-[30vw] animate-spin rounded-full bg-gradient-to-r from-indigo-500 from-0% via-purple-500 via-50% to-violet-500 to-100% opacity-20"
+				class="col-span-full row-span-full -mt-[15vw] h-[50vw] w-[30vw] animate-spin rounded-full bg-gradient-to-r from-indigo-500 from-0% via-purple-500 via-50% to-violet-500 to-100% opacity-20"
 				style="animation-duration: 100s;"
 			/>
 			<div
-				class="ml-[7.5vw] h-[70vw] w-[25vw] animate-spin rounded-full bg-gradient-to-r from-violet-950 from-0% to-indigo-800 to-100% opacity-50"
+				class="col-span-full row-span-full ml-[7.5vw] h-[70vw] w-[25vw] animate-spin rounded-full bg-gradient-to-r from-violet-950 from-0% to-indigo-800 to-100% opacity-50"
 				style="animation-duration: 120s;"
 			/>
 			<div
-				class="mt-[15vw] h-[40vw] w-[40vw] animate-spin rounded-full bg-gradient-to-r from-purple-950 from-0% to-indigo-800 to-100% opacity-50"
+				class="col-span-full row-span-full mt-[15vw] h-[40vw] w-[40vw] animate-spin rounded-full bg-gradient-to-r from-purple-950 from-0% to-indigo-800 to-100% opacity-50"
 				style="animation-duration: 200s;"
 			/>
 		</div>
 	</div>
 </div>
-
-<style>
-	div.grid {
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr;
-	}
-
-	div.grid > div.animate-spin {
-		grid-area: 1 / 1;
-	}
-</style>
