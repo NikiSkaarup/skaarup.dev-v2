@@ -9,7 +9,8 @@
 	<PageHeading>
 		<svelte:fragment slot="title">Uses</svelte:fragment>
 		<p class="text-balance text-center">
-			This page is a list of tools and software I use as a developer.
+			This is a <Link href="https://github.com/wesbos/awesome-uses/">/uses</Link> page with list
+			of tools and software I use as a developer.
 		</p>
 	</PageHeading>
 	<UsesSection id="editor" class="breakout content grid bg-gray-900">
@@ -113,6 +114,14 @@
 			</li>
 			<li>
 				<Link href="https://unlighthouse.dev">unlighthouse</Link>
+			</li>
+		</List>
+	</UsesSection>
+	<UsesSection id="inspiration" class="full-width content grid bg-gray-700/40">
+		<svelte:fragment slot="title">Inspiration</svelte:fragment>
+		<List>
+			<li>
+				<Link href="https://uses.tech/">What is a /uses page</Link>
 			</li>
 		</List>
 	</UsesSection>
