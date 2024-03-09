@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 
 @theme {
-	--color-blurple: #141141;
 }
 
 * {
@@ -14,7 +13,7 @@ body {
 }
 
 body {
-	@apply bg-blurple hyphens-auto break-words bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
+	@apply hyphens-auto break-words bg-gray-950 bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
 	background-image: radial-gradient(
 			at 0% 0%,
 			color-mix(in srgb, var(--color-indigo-500), transparent 77%) 0px,
