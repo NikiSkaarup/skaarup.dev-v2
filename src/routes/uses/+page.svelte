@@ -12,7 +12,7 @@
 		</p>
 	</header>
 
-	<UsesSection id="editor" class="px-4 lg:px-0">
+	<UsesSection id="editor">
 		<svelte:fragment slot="title">Editor</svelte:fragment>
 		<List>
 			<li>
@@ -53,7 +53,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="browser-extensions" class="px-4 lg:px-0">
+	<UsesSection id="browser-extensions">
 		<svelte:fragment slot="title">Browser extensions</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/gorhill/uBlock">uBlock Origin</Link></li>
@@ -88,7 +88,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="cli" class="px-4 lg:px-0">
+	<UsesSection id="cli">
 		<svelte:fragment slot="title">CLIs</svelte:fragment>
 		<List>
 			<li>
