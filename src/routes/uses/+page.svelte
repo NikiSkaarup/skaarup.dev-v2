@@ -5,14 +5,14 @@
 </script>
 
 <article class="content grid">
-	<header class="mx-auto space-y-4 py-8 px-4 xl:max-w-7xl">
-		<h1 class="mx-auto max-w-prose hyphens-auto break-words text-center text-3xl">Uses</h1>
-		<p class="mx-auto max-w-prose hyphens-auto text-balance break-words text-center">
+	<header class="py-8">
+		<h1 class="text-center text-3xl">Uses</h1>
+		<p class="text-balance text-center">
 			This page is a list of tools and software I use as a developer.
 		</p>
 	</header>
 
-	<UsesSection id="editor">
+	<UsesSection id="editor" class="px-4 lg:px-0">
 		<svelte:fragment slot="title">Editor</svelte:fragment>
 		<List>
 			<li>
@@ -53,7 +53,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="browser-extensions">
+	<UsesSection id="browser-extensions" class="px-4 lg:px-0">
 		<svelte:fragment slot="title">Browser extensions</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/gorhill/uBlock">uBlock Origin</Link></li>
@@ -88,7 +88,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="cli">
+	<UsesSection id="cli" class="px-4 lg:px-0">
 		<svelte:fragment slot="title">CLIs</svelte:fragment>
 		<List>
 			<li>
