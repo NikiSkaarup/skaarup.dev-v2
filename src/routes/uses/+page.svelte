@@ -9,7 +9,7 @@
 	<PageHeading>
 		<svelte:fragment slot="title">Uses</svelte:fragment>
 		<p class="text-balance text-center">
-			This is a <Link href="https://github.com/wesbos/awesome-uses/">/uses</Link> page with list
+			This is a <Link href="https://github.com/wesbos/awesome-uses/">/uses</Link> page with a list
 			of tools and software I use as a developer.
 		</p>
 	</PageHeading>
