@@ -4,6 +4,10 @@
 	--color-blurple: #141141;
 }
 
+* {
+    min-width: 0;
+}
+
 html,
 body {
 	@apply min-h-dvh;
