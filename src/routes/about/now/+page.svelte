@@ -9,8 +9,7 @@
 	<PageHeading>
 		<svelte:fragment slot="title">Uses</svelte:fragment>
 		<p class="text-balance text-center">
-			This is a <Link href="https://github.com/wesbos/awesome-uses/">/uses</Link> page with a list
-			of tools and software I use as a developer.
+			This page is a list of tools and software I use as a developer.
 		</p>
 	</PageHeading>
 	<TitledSection id="editor" class="breakout content grid bg-gray-900">
@@ -31,7 +30,7 @@
 			</li>
 		</List>
 	</TitledSection>
-	<TitledSection id="terminal" class="ultrawide content grid bg-gray-700/40">
+	<TitledSection id="terminal" class="full-width content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Terminal</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/alacritty/alacritty">Alacritty</Link></li>
@@ -65,7 +64,7 @@
 			<li><Link href="https://github.com/openstyles/stylus">Stylus</Link></li>
 		</List>
 	</TitledSection>
-	<TitledSection id="desktop-apps" class="ultrawide content grid bg-gray-700/40">
+	<TitledSection id="desktop-apps" class="full-width content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Desktop Apps</svelte:fragment>
 		<List>
 			<li><Link href="https://spotify.com">Spotify</Link></li>
@@ -114,14 +113,6 @@
 			</li>
 			<li>
 				<Link href="https://unlighthouse.dev">unlighthouse</Link>
-			</li>
-		</List>
-	</TitledSection>
-	<TitledSection id="inspiration" class="ultrawide content grid bg-gray-700/40">
-		<svelte:fragment slot="title">Inspiration</svelte:fragment>
-		<List>
-			<li>
-				<Link href="https://uses.tech/">What is a /uses page</Link>
 			</li>
 		</List>
 	</TitledSection>

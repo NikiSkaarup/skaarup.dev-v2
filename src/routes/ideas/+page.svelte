@@ -2,7 +2,7 @@
 	import Link from '$lib/components/ui/link.svelte';
 	import List from '$lib/components/ui/list.svelte';
 	import PageHeading from '$lib/components/ui/page-heading.svelte';
-	import UsesSection from '$lib/components/ui/uses-section.svelte';
+	import TitledSection from '$lib/components/ui/titled-section.svelte';
 </script>
 
 <article class="content grid">
@@ -13,7 +13,7 @@
 			ideas I want to work on.
 		</p>
 	</PageHeading>
-	<UsesSection id="software" class="breakout content grid bg-gray-900">
+	<TitledSection id="software" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">Software</svelte:fragment>
 		<List>
 			<li class="max-w-prose">
@@ -31,8 +31,8 @@
 				</p>
 			</li>
 		</List>
-	</UsesSection>
-	<UsesSection id="games" class="ultrawide content grid bg-gray-700/40">
+	</TitledSection>
+	<TitledSection id="games" class="ultrawide content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Games</svelte:fragment>
 		<List>
 			<li class="max-w-prose">
@@ -49,11 +49,11 @@
 				</p>
 			</li>
 		</List>
-	</UsesSection>
-	<UsesSection id="inspiration" class="breakout content grid bg-gray-900">
+	</TitledSection>
+	<TitledSection id="inspiration" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">Inspiration</svelte:fragment>
 		<List>
 			<li><Link href="https://aboutideasnow.com/about">What is a /ideas page</Link></li>
 		</List>
-	</UsesSection>
+	</TitledSection>
 </article>

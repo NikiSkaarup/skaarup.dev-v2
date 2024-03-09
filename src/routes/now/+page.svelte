@@ -2,7 +2,7 @@
 	import Link from '$lib/components/ui/link.svelte';
 	import List from '$lib/components/ui/list.svelte';
 	import PageHeading from '$lib/components/ui/page-heading.svelte';
-	import UsesSection from '$lib/components/ui/uses-section.svelte';
+	import TitledSection from '$lib/components/ui/titled-section.svelte';
 </script>
 
 <article class="content grid">
@@ -13,7 +13,7 @@
 			I'm currently doing.
 		</p>
 	</PageHeading>
-	<UsesSection id="working-on" class="breakout content grid bg-gray-900">
+	<TitledSection id="working-on" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">What I'm working on</svelte:fragment>
 		<List>
 			<li>
@@ -34,8 +34,8 @@
 				master.
 			</li>
 		</List>
-	</UsesSection>
-	<UsesSection id="reading" class="ultrawide content grid bg-gray-700/40">
+	</TitledSection>
+	<TitledSection id="reading" class="ultrawide content grid bg-gray-700/40">
 		<svelte:fragment slot="title">What I'm reading</svelte:fragment>
 		<p class="max-w-prose">
 			I read mostly fantasy and science fiction, if that isn't your cup of tea, you can ignore
@@ -45,11 +45,11 @@
 			Since I go through somewhere between 130-170 books every year, so it will be more of a
 			books that stuck around than a currently reading.
 		</p>
-	</UsesSection>
-	<UsesSection id="inspiration" class="breakout content grid bg-gray-900">
+	</TitledSection>
+	<TitledSection id="inspiration" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">Inspiration</svelte:fragment>
 		<List>
 			<li><Link href="https://nownownow.com/about">What is a /now page</Link></li>
 		</List>
-	</UsesSection>
+	</TitledSection>
 </article>
