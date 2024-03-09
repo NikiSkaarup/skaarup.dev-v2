@@ -4,10 +4,15 @@
 	/** @type {string}*/
 	export let id;
 	$: noiseId = id + '-noise';
+
+	/** @type {string}*/
+	let myClass = '';
+
+	export { myClass as class };
 </script>
 
 <Noise id={noiseId} begin="{id}.mouseenter" />
-<div {id} class="aspect-square h-12 overflow-hidden rounded-full">
+<div {id} class="aspect-square h-12 rounded-full contain-strict {myClass}">
 	<img
 		loading="eager"
 		class="aspect-square h-full object-cover"
