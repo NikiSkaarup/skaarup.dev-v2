@@ -17,7 +17,7 @@
 		loading="eager"
 		class="aspect-square h-full object-cover"
 		src={portrait}
-		alt="portrait"
+		alt="nws"
 		style="filter: url(#{noiseId});"
 	/>
 </div>

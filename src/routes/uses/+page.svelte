@@ -1,18 +1,18 @@
 <script>
 	import Link from '$lib/components/ui/link.svelte';
 	import List from '$lib/components/ui/list.svelte';
+	import PageHeading from '$lib/components/ui/page-heading.svelte';
 	import UsesSection from '$lib/components/ui/uses-section.svelte';
 </script>
 
 <article class="content grid">
-	<header class="py-8">
-		<h1 class="text-center text-3xl">Uses</h1>
+	<PageHeading>
+		<svelte:fragment slot="title">Uses</svelte:fragment>
 		<p class="text-balance text-center">
 			This page is a list of tools and software I use as a developer.
 		</p>
-	</header>
-
-	<UsesSection id="editor">
+	</PageHeading>
+	<UsesSection id="editor" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">Editor</svelte:fragment>
 		<List>
 			<li>
@@ -30,7 +30,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="terminal" class="breakout content grid bg-black">
+	<UsesSection id="terminal" class="full-width content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Terminal</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/alacritty/alacritty">Alacritty</Link></li>
@@ -53,7 +53,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="browser-extensions">
+	<UsesSection id="browser-extensions" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">Browser extensions</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/gorhill/uBlock">uBlock Origin</Link></li>
@@ -64,7 +64,7 @@
 			<li><Link href="https://github.com/openstyles/stylus">Stylus</Link></li>
 		</List>
 	</UsesSection>
-	<UsesSection id="desktop-apps" class="breakout content grid bg-black">
+	<UsesSection id="desktop-apps" class="full-width content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Desktop Apps</svelte:fragment>
 		<List>
 			<li><Link href="https://spotify.com">Spotify</Link></li>
@@ -88,7 +88,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="cli">
+	<UsesSection id="cli" class="breakout content grid bg-gray-900">
 		<svelte:fragment slot="title">CLIs</svelte:fragment>
 		<List>
 			<li>

@@ -14,5 +14,5 @@
 	class="aspect-square {myClass}"
 	src={dark ? GithubLogoDark : GithubLogoWhite}
 	loading="eager"
-	alt="Github logo"
+	alt="gh"
 />
