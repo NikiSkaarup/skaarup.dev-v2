@@ -31,7 +31,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="terminal" class="full-width content grid bg-gray-700/40">
+	<UsesSection id="terminal" class="ultrawide content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Terminal</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/alacritty/alacritty">Alacritty</Link></li>
@@ -65,7 +65,7 @@
 			<li><Link href="https://github.com/openstyles/stylus">Stylus</Link></li>
 		</List>
 	</UsesSection>
-	<UsesSection id="desktop-apps" class="full-width content grid bg-gray-700/40">
+	<UsesSection id="desktop-apps" class="ultrawide content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Desktop Apps</svelte:fragment>
 		<List>
 			<li><Link href="https://spotify.com">Spotify</Link></li>
@@ -117,7 +117,7 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="inspiration" class="full-width content grid bg-gray-700/40">
+	<UsesSection id="inspiration" class="ultrawide content grid bg-gray-700/40">
 		<svelte:fragment slot="title">Inspiration</svelte:fragment>
 		<List>
 			<li>

@@ -13,7 +13,7 @@ body {
 }
 
 body {
-	@apply hyphens-auto break-words bg-gray-950 bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
+	@apply text-pretty bg-gray-950 bg-cover bg-fixed bg-center bg-no-repeat font-sans text-gray-100;
 	background-image: radial-gradient(
 			at 0% 0%,
 			color-mix(in srgb, var(--color-indigo-500), transparent 77%) 0px,
@@ -29,15 +29,15 @@ body {
 .content {
 	--breakout-size: calc((var(--breakpoint-xl) - var(--breakpoint-lg)) / 2);
 	grid-template-columns:
-		[full-width-start] minmax(var(--spacing-4), 1fr)
+		[ultrawide-start] minmax(var(--spacing-4), 1fr)
 		[breakout-start] minmax(0, var(--breakout-size))
 		[content-start] min(100% - (var(--spacing-4) * 2), var(--breakpoint-lg))
 		[content-end]
 		minmax(0, var(--breakout-size)) [breakout-end]
-		minmax(var(--spacing-4), 1fr) [full-width-end];
+		minmax(var(--spacing-4), 1fr) [ultrawide-end];
 }
 
-.content > :not(.breakout, .full-width) {
+.content > :not(.breakout, .ultrawide) {
 	grid-column: content;
 }
 
@@ -45,6 +45,6 @@ body {
 	grid-column: breakout;
 }
 
-.content > .full-width {
-	grid-column: full-width;
+.content > .ultrawide {
+	grid-column: ultrawide;
 }

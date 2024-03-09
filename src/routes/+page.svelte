@@ -1,14 +1,28 @@
-<article class="even:bg-black">
-	<header class="mx-auto w-full space-y-4 py-8 px-4 xl:max-w-7xl">
-		<h1 class="hyphens-auto break-words text-center text-3xl"><span></span></h1>
-		<p class="mx-auto max-w-prose hyphens-auto break-words text-center"></p>
-		<div class="mx-auto max-w-prose">
-			<a
-				class="inline-block py-2 underline decoration-indigo-500 underline-offset-4 transition-all hover:decoration-2"
-				href="/uses"
-			>
-				<span></span>
-			</a>
-		</div>
-	</header>
+<script>
+	import Link from '$lib/components/ui/link.svelte';
+	import List from '$lib/components/ui/list.svelte';
+	import PageHeading from '$lib/components/ui/page-heading.svelte';
+	import UsesSection from '$lib/components/ui/uses-section.svelte';
+
+	const pages = [
+		{ name: 'About', href: '/about' },
+		{ name: 'Ideas', href: '/ideas' },
+		{ name: 'Now', href: '/now' },
+		{ name: 'Uses', href: '/uses' }
+	];
+</script>
+
+<article class="content grid">
+	<PageHeading>
+		<svelte:fragment slot="title">Typing...</svelte:fragment>
+		<!-- <p class="text-balance text-center">...typing</p> -->
+	</PageHeading>
+	<UsesSection id="pages" class="breakout content grid bg-gray-900">
+		<svelte:fragment slot="title">Pages</svelte:fragment>
+		<List class="flex flex-row gap-2">
+			{#each pages as page}
+				<li><Link href={page.href}>{page.name}</Link></li>
+			{/each}
+		</List>
+	</UsesSection>
 </article>
