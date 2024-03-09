@@ -1,27 +1,29 @@
 <script>
-	import MyAvatar from './avatar.svelte';
+	import Avatar from './avatar.svelte';
+	import GithubLogo from './github-logo.svelte';
 </script>
 
-<header class="sticky top-0 z-20 bg-black font-mono drop-shadow">
-	<div class="mx-auto grid grid-cols-3 py-2 px-4 xl:max-w-7xl">
+<header class="content sticky top-0 z-20 grid bg-black py-2 font-mono drop-shadow sm:px-2">
+	<div class="grid grid-cols-3">
 		<div class="flex items-center gap-8">
+			<a href="#main" class="sr-only">main content</a>
 			<a href="/uses"> Developer </a>
 		</div>
 
 		<div class="flex items-center justify-center">
-			<a href="/"> Niki Wix Skaarup </a>
+			<a href="/" class="text-center"> Niki Wix Skaarup </a>
 		</div>
 
-		<div class="flex items-center justify-end gap-8">
+		<div class="flex items-center justify-end gap-2 md:gap-4">
 			<a
 				class="uppercase"
 				href="https://github.com/nikiskaarup"
 				target="_blank"
 				referrerpolicy="no-referrer"
 			>
-				github
+				<GithubLogo class="h-8" />
 			</a>
-			<MyAvatar id="avatar" />
+			<Avatar id="avatar" class="h-12" />
 		</div>
 	</div>
 </header>

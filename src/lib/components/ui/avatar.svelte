@@ -12,7 +12,7 @@
 </script>
 
 <Noise id={noiseId} begin="{id}.mouseenter" />
-<div {id} class="aspect-square h-12 rounded-full contain-strict {myClass}">
+<div {id} class="aspect-square rounded-full contain-strict {myClass}">
 	<img
 		loading="eager"
 		class="aspect-square h-full object-cover"
