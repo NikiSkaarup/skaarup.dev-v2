@@ -1,10 +1,10 @@
 <script>
-	import List from '$lib/components/ui/list.svelte';
 	import Link from '$lib/components/ui/link.svelte';
+	import List from '$lib/components/ui/list.svelte';
 	import UsesSection from '$lib/components/ui/uses-section.svelte';
 </script>
 
-<article>
+<article class="content grid">
 	<header class="mx-auto space-y-4 py-8 px-4 xl:max-w-7xl">
 		<h1 class="mx-auto max-w-prose hyphens-auto break-words text-center text-3xl">Uses</h1>
 		<p class="mx-auto max-w-prose hyphens-auto text-balance break-words text-center">
@@ -13,9 +13,7 @@
 	</header>
 
 	<UsesSection id="editor">
-		<svelte:fragment slot="title">
-			<a href="#editor"> Editor </a>
-		</svelte:fragment>
+		<svelte:fragment slot="title">Editor</svelte:fragment>
 		<List>
 			<li>
 				<Link href="https://code.visualstudio.com">Visual Studio Code</Link>
@@ -32,10 +30,8 @@
 			</li>
 		</List>
 	</UsesSection>
-	<UsesSection id="terminal">
-		<svelte:fragment slot="title">
-			<a href="#terminal"> Terminal </a>
-		</svelte:fragment>
+	<UsesSection id="terminal" class="breakout content grid bg-black">
+		<svelte:fragment slot="title">Terminal</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/alacritty/alacritty">Alacritty</Link></li>
 			<li>
@@ -58,9 +54,7 @@
 		</List>
 	</UsesSection>
 	<UsesSection id="browser-extensions">
-		<svelte:fragment slot="title">
-			<a href="#browser-extensions"> Browser extensions </a>
-		</svelte:fragment>
+		<svelte:fragment slot="title">Browser extensions</svelte:fragment>
 		<List>
 			<li><Link href="https://github.com/gorhill/uBlock">uBlock Origin</Link></li>
 			<li><Link href="https://github.com/darkreader/darkreader">Dark Reader</Link></li>
@@ -70,10 +64,8 @@
 			<li><Link href="https://github.com/openstyles/stylus">Stylus</Link></li>
 		</List>
 	</UsesSection>
-	<UsesSection id="desktop-apps">
-		<svelte:fragment slot="title">
-			<a href="#desktop-apps"> Desktop Apps </a>
-		</svelte:fragment>
+	<UsesSection id="desktop-apps" class="breakout content grid bg-black">
+		<svelte:fragment slot="title">Desktop Apps</svelte:fragment>
 		<List>
 			<li><Link href="https://spotify.com">Spotify</Link></li>
 			<li><Link href="https://desktop.github.com">Github Desktop</Link></li>
@@ -97,9 +89,7 @@
 		</List>
 	</UsesSection>
 	<UsesSection id="cli">
-		<svelte:fragment slot="title">
-			<a href="#cli"> CLIs </a>
-		</svelte:fragment>
+		<svelte:fragment slot="title">CLIs</svelte:fragment>
 		<List>
 			<li>
 				Node Version Manager - <Link href="https://github.com/Schniz/fnm">fnm</Link>

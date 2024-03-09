@@ -1,16 +1,17 @@
 <script>
-	/** @type {string | undefined}*/
-	export let id = undefined;
+	/** @type {string}*/
+	export let id;
+
+	/** @type {string}*/
+	let myClass = '';
+
+	export { myClass as class };
 </script>
 
-<section class="odd:bg-black">
-	<div class="mx-auto w-full py-8 px-4 xl:max-w-7xl">
-		<div class="mx-auto max-w-prose space-y-4 hyphens-auto break-words">
-			<h2 {id} class="scroll-m-24 text-2xl">
-				<slot name="title" />
-			</h2>
+<section class="space-y-4 hyphens-auto break-words py-8 px-4 {myClass}">
+	<h2 {id} class="scroll-m-24 text-2xl">
+		<a href="#{id}"><slot name="title" /></a>
+	</h2>
 
-			<slot />
-		</div>
-	</div>
+	<slot />
 </section>

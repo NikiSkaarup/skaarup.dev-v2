@@ -22,3 +22,26 @@ body {
 			transparent 50%
 		);
 }
+
+.content {
+	--breakout-size: calc((var(--breakpoint-xl) - var(--breakpoint-lg)) / 2);
+	grid-template-columns:
+		[full-width-start] minmax(var(--spacing-4), 1fr)
+		[breakout-start] minmax(0, var(--breakout-size))
+		[content-start] min(100% - (var(--spacing-4) * 2), var(--breakpoint-lg))
+		[content-end]
+		minmax(0, var(--breakout-size)) [breakout-end]
+		minmax(var(--spacing-4), 1fr) [full-width-end];
+}
+
+.content > :not(.breakout, .full-width) {
+	grid-column: content;
+}
+
+.content > .breakout {
+	grid-column: breakout;
+}
+
+.content > .full-width {
+	grid-column: full-width;
+}
