@@ -23,7 +23,7 @@
 				<Link href="https://github.com/catppuccin/vscode">Catppuccin mocha</Link>
 				/
 				<Link href="https://github.com/dhedgecock/radical-vscode">Radical</Link>
-				<span class="text-sm">(either one depending on my mood)</span>
+				<span class="inline-block text-sm">(either one depending on my mood)</span>
 			</li>
 			<li>
 				Font - <Link href="https://vercel.com/font/mono">Geist Mono</Link>
