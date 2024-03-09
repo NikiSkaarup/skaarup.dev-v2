@@ -3,14 +3,13 @@ import { nanoid } from 'nanoid';
 
 export const handle = async ({ event, resolve }) => {
 	const requestId = nanoid();
-	const startMark = `request/start/${requestId}`;
-	performance.mark(startMark);
+	performance.mark(requestId);
 
 	event.locals.requestId = requestId;
 
 	const result = await resolve(event);
 
-	performance.measure(`request: ${requestId}`, startMark);
+	performance.measure(`request: ${requestId}`, requestId);
 	return result;
 };
 
