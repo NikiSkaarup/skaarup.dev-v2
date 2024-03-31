@@ -1,12 +1,16 @@
 <script>
 	import { page } from '$app/stores';
 
-	const titleBase = 'Niki Wix Skaarup';
-	$: title = $page.url.pathname === '/' ? titleBase : `${titleBase} - ${$page.data.title}`;
+	let title = $derived(
+		$page.url.pathname === '/' || $page.data.title.length === 0
+			? $page.data.titleBase
+			: `${$page.data.titleBase} - ${$page.data.title}`
+	);
+
 	/** @type {string}*/
-	$: description = $page.data.snippet ?? '';
+	let description = $derived($page.data.snippet ?? '');
 	/** @type {string}*/
-	$: image = $page.data.image ?? '';
+	let image = $derived($page.data.image ?? '');
 </script>
 
 <svelte:head>

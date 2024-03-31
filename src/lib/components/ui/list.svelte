@@ -1,10 +1,8 @@
 <script>
-	/** @type {string | null | undefined}*/
-	let myClass = 'list-inside list-disc flex flex-col gap-2';
-
-	export { myClass as class };
+	/** @type {{class?: string | undefined | null; children: import('svelte').Snippet}} */
+	let { class: className, children } = $props();
 </script>
 
-<ul class={myClass}>
-	<slot />
+<ul class="flex list-inside list-disc flex-col gap-2 {className}">
+	{@render children()}
 </ul>

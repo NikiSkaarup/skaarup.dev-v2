@@ -7,18 +7,24 @@
 
 <article class="content grid">
 	<PageHeading>
-		<svelte:fragment slot="title">About</svelte:fragment>
+		{#snippet title()}
+			About
+		{/snippet}
 		<p class="text-balance text-center">
 			This is a <Link href="https://aboutideasnow.com/about">/about</Link> page with a general
 			overview of who I think I am.
 		</p>
 	</PageHeading>
 	<TitledSection id="whoami" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Who am I?</svelte:fragment>
+		{#snippet title()}
+			Who am I?
+		{/snippet}
 		<p>I'm a developer who loves to write code, learn new things</p>
 	</TitledSection>
 	<TitledSection id="inspiration" class="ultrawide content grid bg-gray-700/40">
-		<svelte:fragment slot="title">Inspiration</svelte:fragment>
+		{#snippet title()}
+			Inspiration
+		{/snippet}
 		<List>
 			<li><Link href="https://aboutideasnow.com/about">What is an /about page</Link></li>
 		</List>

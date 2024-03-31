@@ -7,14 +7,18 @@
 
 <article class="content grid">
 	<PageHeading>
-		<svelte:fragment slot="title">Ideas</svelte:fragment>
+		{#snippet title()}
+			Ideas
+		{/snippet}
 		<p class="text-balance text-center">
 			This is a <Link href="https://aboutideasnow.com/about">/ideas</Link> page with a list of
 			ideas I want to work on.
 		</p>
 	</PageHeading>
 	<TitledSection id="software" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Software</svelte:fragment>
+		{#snippet title()}
+			Software
+		{/snippet}
 		<List>
 			<li class="max-w-prose">
 				Public domain test data api, that can be used for testing and development.
@@ -33,7 +37,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="games" class="ultrawide content grid bg-gray-700/40">
-		<svelte:fragment slot="title">Games</svelte:fragment>
+		{#snippet title()}
+			Games
+		{/snippet}
 		<List>
 			<li class="max-w-prose">
 				Tower defense game.
@@ -51,7 +57,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="inspiration" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Inspiration</svelte:fragment>
+		{#snippet title()}
+			Inspiration
+		{/snippet}
 		<List>
 			<li><Link href="https://aboutideasnow.com/about">What is a /ideas page</Link></li>
 		</List>

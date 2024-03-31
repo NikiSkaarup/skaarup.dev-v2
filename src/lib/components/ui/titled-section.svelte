@@ -1,17 +1,15 @@
 <script>
-	/** @type {string}*/
-	export let id;
-
-	/** @type {string}*/
-	let myClass = '';
-
-	export { myClass as class };
+	/** @type {{id: string; class?: string | undefined | null; children?: import('svelte').Snippet; title: import('svelte').Snippet}} */
+	let { id, class: className, children, title } = $props();
 </script>
 
-<section class="flex flex-col gap-2 py-8 {myClass}">
+<section class="flex flex-col gap-2 py-8 {className}">
 	<h2 {id} class="scroll-m-24 text-2xl">
-		<a href="#{id}"><slot name="title" /></a>
+		<a href="#{id}">
+			{@render title()}
+		</a>
 	</h2>
-
-	<slot />
+	{#if children}
+		{@render children()}
+	{/if}
 </section>

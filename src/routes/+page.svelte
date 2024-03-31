@@ -14,11 +14,15 @@
 
 <article class="content grid">
 	<PageHeading>
-		<svelte:fragment slot="title">Typing...</svelte:fragment>
+		{#snippet title()}
+			Typing..
+		{/snippet}
 		<!-- <p class="text-balance text-center">...typing</p> -->
 	</PageHeading>
 	<TitledSection id="pages" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Pages</svelte:fragment>
+		{#snippet title()}
+			Pages
+		{/snippet}
 		<List class="flex flex-row gap-2">
 			{#each pages as page}
 				<li><Link href={page.href}>{page.name}</Link></li>

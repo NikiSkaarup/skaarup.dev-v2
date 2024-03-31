@@ -1,4 +1,13 @@
-<header class="flex flex-col gap-2 py-8">
-	<h1 class="text-center text-3xl"><slot name="title" /></h1>
-	<slot />
+<script>
+	/** @type {{class?: string | undefined | null; children?: import('svelte').Snippet, title: import('svelte').Snippet}} */
+	let { class: className, children, title } = $props();
+</script>
+
+<header class="flex flex-col gap-2 py-8 {className}">
+	<h1 class="text-center text-3xl">
+		{@render title()}
+	</h1>
+	{#if children}
+		{@render children()}
+	{/if}
 </header>

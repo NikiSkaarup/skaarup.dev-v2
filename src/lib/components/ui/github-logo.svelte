@@ -2,16 +2,12 @@
 	import GithubLogoWhite from '$lib/../images/github-mark-white.svg';
 	import GithubLogoDark from '$lib/../images/github-mark.svg';
 
-	export let dark = false;
-
-	/** @type {string}*/
-	let myClass = '';
-
-	export { myClass as class };
+	/** @type {{dark?: boolean; class?: string | undefined | null;}} */
+	let { dark = false, class: className } = $props();
 </script>
 
 <img
-	class="aspect-square {myClass}"
+	class="aspect-square {className}"
 	src={dark ? GithubLogoDark : GithubLogoWhite}
 	loading="eager"
 	alt="gh"

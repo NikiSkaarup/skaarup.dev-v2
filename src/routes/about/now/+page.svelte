@@ -7,13 +7,17 @@
 
 <article class="content grid">
 	<PageHeading>
-		<svelte:fragment slot="title">Uses</svelte:fragment>
+		{#snippet title()}
+			Uses
+		{/snippet}
 		<p class="text-balance text-center">
 			This page is a list of tools and software I use as a developer.
 		</p>
 	</PageHeading>
 	<TitledSection id="editor" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Editor</svelte:fragment>
+		{#snippet title()}
+			Editor
+		{/snippet}
 		<List>
 			<li>
 				<Link href="https://code.visualstudio.com">Visual Studio Code</Link>
@@ -31,7 +35,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="terminal" class="full-width content grid bg-gray-700/40">
-		<svelte:fragment slot="title">Terminal</svelte:fragment>
+		{#snippet title()}
+			Terminal
+		{/snippet}
 		<List>
 			<li><Link href="https://github.com/alacritty/alacritty">Alacritty</Link></li>
 			<li>
@@ -54,7 +60,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="browser-extensions" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Browser extensions</svelte:fragment>
+		{#snippet title()}
+			Browser extensions
+		{/snippet}
 		<List>
 			<li><Link href="https://github.com/gorhill/uBlock">uBlock Origin</Link></li>
 			<li><Link href="https://github.com/darkreader/darkreader">Dark Reader</Link></li>
@@ -65,7 +73,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="desktop-apps" class="full-width content grid bg-gray-700/40">
-		<svelte:fragment slot="title">Desktop Apps</svelte:fragment>
+		{#snippet title()}
+			Desktop Apps
+		{/snippet}
 		<List>
 			<li><Link href="https://spotify.com">Spotify</Link></li>
 			<li><Link href="https://desktop.github.com">Github Desktop</Link></li>
@@ -89,7 +99,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="cli" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">CLIs</svelte:fragment>
+		{#snippet title()}
+			CLIs
+		{/snippet}
 		<List>
 			<li>
 				Node Version Manager - <Link href="https://github.com/Schniz/fnm">fnm</Link>

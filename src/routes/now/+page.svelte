@@ -7,14 +7,18 @@
 
 <article class="content grid">
 	<PageHeading>
-		<svelte:fragment slot="title">Now</svelte:fragment>
+		{#snippet title()}
+			Now
+		{/snippet}
 		<p class="text-balance text-center">
 			This is a <Link href="https://nownownow.com/about">/now</Link> page with a list of things
 			I'm currently doing.
 		</p>
 	</PageHeading>
 	<TitledSection id="working-on" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">What I'm working on</svelte:fragment>
+		{#snippet title()}
+			What I'm working on
+		{/snippet}
 		<List>
 			<li>
 				Filling out the <Link href="/about">/about</Link> page.
@@ -36,7 +40,9 @@
 		</List>
 	</TitledSection>
 	<TitledSection id="reading" class="ultrawide content grid bg-gray-700/40">
-		<svelte:fragment slot="title">What I'm reading</svelte:fragment>
+		{#snippet title()}
+			What I'm reading
+		{/snippet}
 		<p class="max-w-prose">
 			I read mostly fantasy and science fiction, if that isn't your cup of tea, you can ignore
 			this section.
@@ -47,7 +53,9 @@
 		</p>
 	</TitledSection>
 	<TitledSection id="inspiration" class="breakout content grid bg-gray-900">
-		<svelte:fragment slot="title">Inspiration</svelte:fragment>
+		{#snippet title()}
+			Inspiration
+		{/snippet}
 		<List>
 			<li><Link href="https://nownownow.com/about">What is a /now page</Link></li>
 		</List>
