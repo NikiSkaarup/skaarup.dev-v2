@@ -1,7 +1,7 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { spring } from 'svelte/motion';
 	import { dev } from '$app/environment';
+	import { spring } from 'svelte/motion';
+	import { fade } from 'svelte/transition';
 
 	const point = spring(
 		{ x: 100, y: 300 },
