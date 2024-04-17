@@ -1,5 +1,5 @@
 export const load = async () => {
 	return {
-		title: 'ideas'
+		title: 'ideas',
 	};
 };

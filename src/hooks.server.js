@@ -21,7 +21,7 @@ export async function handleError({ error, event, status, message }) {
 		path: event.url.pathname,
 		query: event.url.search,
 		status,
-		error: error instanceof Error ? error.message : error
+		error: error instanceof Error ? error.message : error,
 	});
 
 	if (error instanceof Error) {
@@ -29,7 +29,7 @@ export async function handleError({ error, event, status, message }) {
 	}
 
 	return {
-		message: 'Whoops!'
+		message: 'Whoops!',
 	};
 }
 
@@ -41,7 +41,9 @@ if (dev) {
 			const entry = entriesArr[i];
 			if (entry.entryType === 'measure') {
 				console.info(
-					`${colors.fgGreen}${entry.name}${colors.reset} ${colors.fgYellow}${entry.duration.toFixed(3).padStart(7, '0')}${colors.reset}ms`
+					`${colors.fgGreen}${entry.name}${colors.reset} ${colors.fgYellow}${entry.duration
+						.toFixed(3)
+						.padStart(7, '0')}${colors.reset}ms`,
 				);
 			}
 		}
