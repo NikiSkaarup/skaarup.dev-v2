@@ -17,24 +17,29 @@
     "fmt": "biome format --write ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.7.3",
-    "@sveltejs/kit": "^2.5.10",
+    "@biomejs/biome": "^1.8.3",
+    "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
-    "@tailwindcss/vite": "^4.0.0-alpha.15",
+    "@tailwindcss/vite": "^4.0.0-alpha.16",
     "@types/bun": "latest",
-    "eslint": "^9.4.0",
+    "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.39.0",
+    "eslint-plugin-svelte": "^2.41.0",
     "nanoid": "^5.0.7",
-    "prettier": "^4.0.0-alpha.8",
-    "prettier-plugin-svelte": "^3.2.3",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "svelte": "^5.0.0-next.148",
+    "prettier": "^3.3.2",
+    "prettier-plugin-svelte": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "svelte": "^5.0.0-next.169",
     "svelte-adapter-bun": "^0.5.2",
-    "svelte-check": "^3.8.0",
-    "tailwindcss": "^4.0.0-alpha.15",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.12"
+    "svelte-check": "^3.8.4",
+    "tailwindcss": "^4.0.0-alpha.16",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.2"
   },
-  "trustedDependencies": ["@biomejs/biome", "@sveltejs/kit", "esbuild", "svelte-preprocess"]
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@sveltejs/kit",
+    "esbuild",
+    "svelte-preprocess"
+  ]
 }
