@@ -6,7 +6,7 @@ services:
     image: nikiskaarup/skaarup-dev-v2:latest
     pull_policy: build
     ports:
-      - "3000:3000"
+      - "3012:3012"
     container_name: skaarup-dev-v2
     restart: unless-stopped
     network_mode: bridge
