@@ -34,7 +34,6 @@ COPY --from=install /temp/prod/node_modules node_modules
 COPY --from=prerelease /app/ .
 
 ENV PORT=3012
-
 ENV ORIGIN $ORIGIN
 ENV PROTOCOL_HEADER=x-forwarded-proto
 ENV HOST_HEADER=x-forwarded-host
