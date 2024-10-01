@@ -17,7 +17,7 @@
     "fmt": "biome format --write ."
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.2",
+    "@biomejs/biome": "^1.9.3",
     "@sveltejs/kit": "^2.6.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0-next.7",
     "@tailwindcss/vite": "^4.0.0-alpha.25",
@@ -35,7 +35,7 @@
     "sveltekit-plugin-console": "^0.1.11",
     "tailwindcss": "^4.0.0-alpha.25",
     "typescript": "^5.6.2",
-    "vite": "^6.0.0-beta.1"
+    "vite": "^6.0.0-beta.2"
   },
   "trustedDependencies": ["@biomejs/biome", "@sveltejs/kit", "esbuild", "svelte-preprocess"]
 }
